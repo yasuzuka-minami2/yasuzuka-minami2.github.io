@@ -1,0 +1,35 @@
+﻿node.exe :  笞 Linting
+ is disabled.
+発生場所 行:1 文字:1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\P
+rogram Files\nodejs/no
+de_mo ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: ( 笞 Lintin   
+ g is disabled.:St    
+ring) [], RemoteE    x
+ception
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+   笆ｲ Next.js 15.2.6
+
+   Creating an optimized production build ...
+ 笨・Compiled successfully
+   Checking validity of types ...
+   Collecting page data ...
+
+> Build error occurred
+[Error: Page "/reports
+/[id]" is missing "gen
+erateStaticParams()" s
+o it cannot be used wi
+th "output: export" co
+nfig.]
