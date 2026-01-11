@@ -8,7 +8,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border bg-card">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-6 md:py-8">
           <div className="flex flex-col items-center text-center gap-8">
             <div className="space-y-3 w-full">
               <h1
@@ -24,7 +24,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <div className="relative w-full h-64 md:h-96 overflow-hidden">
+      <div className="relative w-full h-48 md:h-96 overflow-hidden">
         <Image
           src="/shrine.png"
           alt="安塚神社"
@@ -42,7 +42,7 @@ export default function HomePage() {
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4">ようこそ</h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             新田南2組のデジタル回覧板へようこそ。
-            <br />
+            <br className="hidden md:block" />
             こちらでは、従来の紙の回覧板に合わせ、お知らせや回覧情報、
             <br className="hidden md:block" />
             活動報告などをいつでもご確認いただけます。
@@ -53,9 +53,9 @@ export default function HomePage() {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* お知らせ */}
           <Link href="/news">
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
-              <div className="flex items-start gap-6">
-                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
                   <Bell className="h-10 w-10 text-primary" />
                 </div>
                 <div className="flex-1">
@@ -65,7 +65,7 @@ export default function HomePage() {
                   </h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
                     自治会からの重要なお知らせや
-                    <br />
+                    <br className="hidden md:block" />
                     連絡事項をご確認いただけます
                   </p>
                   <div className="mt-4">
@@ -80,9 +80,9 @@ export default function HomePage() {
 
           {/* 回覧板 */}
           <Link href="/kairanban">
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
-              <div className="flex items-start gap-6">
-                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
                   <FileText className="h-10 w-10 text-primary" />
                 </div>
                 <div className="flex-1">
@@ -92,7 +92,7 @@ export default function HomePage() {
                   </h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
                     回覧情報をご確認の上、
-                    <br />
+                    <br className="hidden md:block" />
                     確認フォームへご記入ください
                   </p>
                   <div className="mt-4">
@@ -107,9 +107,9 @@ export default function HomePage() {
 
           {/* 活動報告 */}
           <Link href="/reports">
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
-              <div className="flex items-start gap-6">
-                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
                   <Calendar className="h-10 w-10 text-primary" />
                 </div>
                 <div className="flex-1">
@@ -119,7 +119,7 @@ export default function HomePage() {
                   </h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
                     自治会の活動内容や
-                    <br />
+                    <br className="hidden md:block" />
                     イベントの報告をご覧いただけます
                   </p>
                 </div>
@@ -129,9 +129,9 @@ export default function HomePage() {
 
           {/* 組員情報 */}
           <Link href="/members">
-            <Card className="p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
-              <div className="flex items-start gap-6">
-                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
                   <Users className="h-10 w-10 text-primary" />
                 </div>
                 <div className="flex-1">
@@ -141,7 +141,7 @@ export default function HomePage() {
                   </h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
                     組長の連絡先や
-                    <br />
+                    <br className="hidden md:block" />
                     緊急連絡網をご確認いただけます
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export default function HomePage() {
         </section>
 
         {/* Info Section */}
-        <section className="bg-muted/50 rounded-lg p-8 border border-border">
+        <section className="bg-muted/50 rounded-lg p-6 md:p-8 border border-border">
           <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 text-center">デジタル回覧板の使い方</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="flex flex-col items-center gap-3">
@@ -161,7 +161,7 @@ export default function HomePage() {
               <p className="text-base text-foreground font-medium">カードをタップ</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 見たい情報のカードを
-                <br />
+                <br className="hidden md:block" />
                 タップしてください
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function HomePage() {
               <p className="text-base text-foreground font-medium">内容を確認</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 お知らせや回覧情報を
-                <br />
+                <br className="hidden md:block" />
                 ゆっくりご確認ください
               </p>
             </div>
@@ -183,7 +183,7 @@ export default function HomePage() {
               <p className="text-base text-foreground font-medium">確認フォーム入力</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 回覧板は確認フォームへの
-                <br />
+                <br className="hidden md:block" />
                 ご記入をお願いします
               </p>
             </div>
@@ -193,7 +193,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-border bg-card mt-16">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-6 md:py-8">
           <div className="text-center space-y-2">
             <p className="text-sm text-muted-foreground">安塚町自治会 新田南2組</p>
             <p className="text-sm text-muted-foreground">〒513-0012 三重県鈴鹿市安塚町</p>
