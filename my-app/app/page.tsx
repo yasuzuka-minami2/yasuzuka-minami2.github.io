@@ -43,7 +43,7 @@ export default function HomePage() {
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             新田南2組のデジタル回覧板へようこそ。
             <br />
-            こちらでは、従来の紙の回覧板に代わり、お知らせや回覧情報、
+            こちらでは、従来の紙の回覧板に合わせ、お知らせや回覧情報、
             <br className="hidden md:block" />
             活動報告などをいつでもご確認いただけます。
           </p>
