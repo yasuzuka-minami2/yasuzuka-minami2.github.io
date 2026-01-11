@@ -26,7 +26,7 @@ export default function HomePage() {
 
       <div className="relative w-full h-64 md:h-96 overflow-hidden">
         <Image
-          src="/shrine.jpg"
+          src="/shrine.png"
           alt="安塚神社"
           fill
           className="object-cover"
