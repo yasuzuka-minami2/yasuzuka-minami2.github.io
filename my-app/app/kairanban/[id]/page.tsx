@@ -31,7 +31,7 @@ export default async function KairanbanDetailPage({ params }: { params: Promise<
           description: "自治会への要望事項がございましたら、フォームにご記入ください。",
         },
       ],
-      formUrl: "https://forms.gle/example-kairanban-1", // 実際のGoogle FormsのURLに置き換え
+      formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe3lDuZ4CT8Qnh7lavkuuvMNdFFWW5mluuDR4xofWJX-Vun-w/viewform?usp=dialog",
     },
     "2": {
       issueNumber: "第二号",

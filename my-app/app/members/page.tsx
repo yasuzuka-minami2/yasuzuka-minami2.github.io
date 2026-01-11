@@ -38,14 +38,14 @@ export default function MembersPage() {
 
           <div className="space-y-4 pl-0 md:pl-12">
             <div className="bg-muted/50 p-6 rounded-lg">
-              <p className="text-lg font-bold text-foreground mb-4">[組長のお名前]</p>
+              <p className="text-lg font-bold text-foreground mb-4">河野 良太</p>
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-muted-foreground flex-shrink-0" />
                   <div>
                     <p className="text-sm text-muted-foreground">電話番号</p>
-                    <p className="text-base font-medium text-foreground">[電話番号]</p>
+                    <p className="text-base font-medium text-foreground">090-4264-4768</p>
                   </div>
                 </div>
 
@@ -53,7 +53,7 @@ export default function MembersPage() {
                   <Mail className="h-5 w-5 text-muted-foreground flex-shrink-0" />
                   <div>
                     <p className="text-sm text-muted-foreground">メールアドレス</p>
-                    <p className="text-base font-medium text-foreground break-all">[メールアドレス]</p>
+                    <p className="text-base font-medium text-foreground break-all">ryotaro8611@gmail.com</p>
                   </div>
                 </div>
               </div>
