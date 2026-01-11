@@ -26,8 +26,8 @@ export default function HomePage() {
 
       <div className="relative w-full h-64 md:h-96 overflow-hidden">
         <Image
-          src="/peaceful-japanese-neighborhood-street-view-with-tr.jpg"
-          alt="安塚町の風景"
+          src="/shrine.jpg"
+          alt="安塚神社"
           fill
           className="object-cover"
           priority
