@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
-import { Bell, FileText, Calendar, Users, ChevronRight } from "lucide-react"
+import { Bell, FileText, Calendar, Users, ChevronRight, CalendarDays, BookOpen } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -143,6 +143,50 @@ export default function HomePage() {
                     組長の連絡先や
                     <br className="hidden md:block" />
                     緊急連絡網をご確認いただけます
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </Link>
+
+          {/* 年間スケジュール */}
+          <Link href="/schedule">
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
+                  <CalendarDays className="h-10 w-10 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
+                    年間スケジュール
+                    <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    年間の行事予定や
+                    <br className="hidden md:block" />
+                    スケジュールをご確認いただけます
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </Link>
+
+          {/* 安塚自治会規約 */}
+          <Link href="/rules">
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
+                  <BookOpen className="h-10 w-10 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
+                    安塚自治会規約
+                    <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    自治会の規約や
+                    <br className="hidden md:block" />
+                    ルールをご確認いただけます
                   </p>
                 </div>
               </div>
