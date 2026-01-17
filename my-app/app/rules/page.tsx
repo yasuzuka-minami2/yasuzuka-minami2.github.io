@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card"
-import { BookOpen } from "lucide-react"
+import { BookOpen, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
@@ -29,6 +29,15 @@ export default function RulesPage() {
                         今後の更新をお待ちください
                     </p>
                 </Card>
+
+                <div className="mt-12 text-center">
+                    <Link href="/">
+                        <Button size="lg" className="text-base px-8">
+                            <ArrowLeft className="h-5 w-5 mr-2" />
+                            トップページに戻る
+                        </Button>
+                    </Link>
+                </div>
             </div>
         </div>
     )
