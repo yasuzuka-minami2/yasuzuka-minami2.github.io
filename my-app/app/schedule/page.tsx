@@ -24,16 +24,21 @@ export default function SchedulePage() {
 
                 <Card className="p-4 md:p-8 overflow-hidden">
                     <div className="relative w-full h-auto aspect-[3508/2480]">
-                        <Image
-                            src="/schedule/2026_schedule.webp"
-                            alt="令和8年度 年間スケジュール"
-                            fill
-                            className="object-contain"
-                            priority
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
-                        />
+                        <a href="/schedule/2026_schedule.webp" target="_blank" rel="noopener noreferrer" className="cursor-zoom-in">
+                            <Image
+                                src="/schedule/2026_schedule.webp"
+                                alt="令和8年度 年間スケジュール"
+                                fill
+                                className="object-contain"
+                                priority
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                            />
+                        </a>
                     </div>
                 </Card>
+                <p className="text-center text-sm text-muted-foreground mt-2">
+                    ※画像をタップすると拡大表示できます
+                </p>
 
                 <div className="mt-12 text-center">
                     <Link href="/">
