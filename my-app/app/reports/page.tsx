@@ -5,28 +5,13 @@ import { ArrowLeft, Calendar, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
 export default function ReportsPage() {
-  // 実際の活動報告はここに追加してください
   const reports = [
     {
-      id: "cleaning-2024",
-      title: "年末大掃除の実施報告",
-      date: "2025年12月28日",
-      excerpt: "12月28日に実施した年末大掃除には、20世帯からご参加いただきました。",
-      imageUrl: "/japanese-community-members-cleaning-neighborhood-s.jpg",
-    },
-    {
-      id: "disaster-prep-2024",
-      title: "防災備蓄品の確認",
-      date: "2025年11月15日",
-      excerpt: "組で管理している防災備蓄品の確認を行いました。",
-      imageUrl: "/emergency-supplies-and-disaster-preparedness-kit.jpg",
-    },
-    {
-      id: "autumn-festival-2024",
-      title: "秋祭りの開催",
-      date: "2025年10月20日",
-      excerpt: "秋晴れの下、恒例の秋祭りを開催しました。",
-      imageUrl: "/japanese-autumn-festival-with-children-and-familie.jpg",
+      id: "20260211",
+      title: "御鍬祭（おくわさい）の開催",
+      date: "2026年2月11日（水・祝）",
+      excerpt: "寒さ残る冬空の下、御鍬祭を開催しました。",
+      imageUrl: "/reports/20260211/1.jpg",
     },
   ]
 

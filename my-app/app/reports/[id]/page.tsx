@@ -4,78 +4,59 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Calendar, Users } from "lucide-react"
 import Image from "next/image"
 import { notFound } from "next/navigation"
+import ReportContent from "./ReportContent"
 
 const reportsData = {
-  "cleaning-2024": {
-    title: "年末大掃除の実施報告",
-    date: "2025年12月28日",
-    participants: 20,
-    content: `12月28日（土）午前9時より、年末大掃除を実施いたしました。
-    
-今年も多くの方にご参加いただき、20世帯のご協力のもと、地域の清掃活動を行うことができました。
-
-当日は天候にも恵まれ、組内の道路や側溝、公園周辺を中心に清掃を行いました。落ち葉の回収や側溝の泥上げなど、日頃手の届かない箇所まで丁寧に作業を進めることができました。
-
-作業後は、参加者の皆さまで温かいお茶とお菓子を囲みながら、今年一年を振り返る良い機会となりました。
-
-ご参加いただいた皆さま、誠にありがとうございました。来年もどうぞよろしくお願いいたします。`,
-    images: [
-      "/japanese-community-members-cleaning-neighborhood-s.jpg",
-      "/japanese-neighbors-cleaning-street-together.jpg",
-      "/clean-japanese-neighborhood-after-community-cleanu.jpg",
-    ],
-  },
-  "disaster-prep-2024": {
-    title: "防災備蓄品の確認",
-    date: "2025年11月15日",
+  "20260211": {
+    title: "御鍬祭（おくわさい）の開催",
+    date: "2026年2月11日（水・祝）",
     participants: null,
-    content: `11月15日に、組で管理している防災備蓄品の定期確認を行いました。
+    content: `![御鍬祭](1.jpg)
 
-今回の点検では、以下の項目を確認いたしました：
-• 飲料水の賞味期限チェック
-• 非常食（アルファ米、缶詰等）の在庫確認
-• 救急用品の補充状況
-• 懐中電灯、電池の動作確認
-• 毛布、ブルーシートの状態確認
+立春を過ぎ、暦の上では春とはいえ、まだ寒さの残るなか、本年度の「御鍬祭」が滞りなく執り行われました。
 
-確認の結果、飲料水の一部が賞味期限間近となっていたため、新しいものと交換いたしました。また、救急用品の消毒液を補充し、電池も新しいものに交換しております。
+開催日：2026年2月11日（水・祝）場所：阿自賀神社
 
-災害はいつ起こるかわかりません。引き続き、定期的な点検を行い、万が一に備えてまいります。`,
+## 皆様のご協力に感謝申し上げます
+
+当日は朝早くから会場の準備にご協力いただいた皆様、また、当日まで細やかな手配を担ってくださった宮当番の皆様、本当にお疲れ様でした。
+
+皆様の献身的な支えがあったからこそ、無事にこの日を迎えることができました。また、お忙しいなか奉納や式典にご参加いただいた住民の皆様にも、厚く御礼申し上げます。
+
+![会場設営や受付準備に励む皆様の様子](3.jpg)
+
+## 式典の様子
+
+14:30より執り行われた式典では、神主様をお招きし、厳かな雰囲気の中で執り行われました。
+
+厄除けの祈願とともに、今年一年の五穀豊穣と地域の安泰を願って、祝詞（のりと）を奏上していただきました。祭壇に供えられた供物や、静まり返った拝殿に響く祝詞の音に、参加者一同、身の引き締まる思いで手を合わせました。
+
+![厳かに整えられた祭壇と御神燈](2.jpg)
+
+## 組長より一言
+
+本日は誠にありがとうございました。
+
+皆様とともにこうして伝統ある行事を守り、祈りを捧げることができ、大変嬉しく思います。
+
+今年一年が、皆様にとって健康で、笑顔の絶えないご多幸な年となりますよう、心よりお祈り申し上げます。今後とも自治会活動へのご理解とご協力を、どうぞよろしくお願いいたします。
+
+### 【次回の活動予定】
+
+次回の行事予定については、改めて掲示板およびホームページにてお知らせいたします。
+
+> **注記：** この報告書に使用している写真は、当日撮影したものです。プライバシー等に配慮しておりますが、掲載に差し障りがある場合は組長までご連絡ください。`,
     images: [
-      "/emergency-supplies-and-disaster-preparedness-kit.jpg",
-      "/emergency-water-bottles-and-food-supplies.jpg",
-      "/first-aid-kit-and-emergency-blankets.jpg",
-    ],
-  },
-  "autumn-festival-2024": {
-    title: "秋祭りの開催",
-    date: "2025年10月20日",
-    participants: 35,
-    content: `10月20日（日）、秋晴れの素晴らしい天気のもと、恒例の秋祭りを開催いたしました。
-
-今年は35世帯、約100名の方にご参加いただき、大変賑やかなお祭りとなりました。
-
-子どもたちには、輪投げやヨーヨー釣りなどの縁日コーナーが大人気。笑顔があふれる一日となりました。また、焼きそばや焼き鳥、綿あめなどの出店も多くの方にお楽しみいただきました。
-
-午後からは、地域の方々による和太鼓の演奏や、子どもたちによる踊りの披露もあり、会場は大いに盛り上がりました。
-
-最後に、ビンゴ大会で盛り上がり、豪華景品に歓声が上がりました。
-
-ご協力いただいた役員の皆さま、ご参加いただいた皆さま、本当にありがとうございました。来年もぜひご参加ください。`,
-    images: [
-      "/japanese-autumn-festival-with-children-and-familie.jpg",
-      "/japanese-festival-games-with-children-playing.jpg",
-      "/japanese-community-festival-food-stalls.jpg",
-      "/japanese-taiko-drum-performance-at-community-festi.jpg",
+      "/reports/20260211/1.jpg",
+      "/reports/20260211/3.jpg",
+      "/reports/20260211/2.jpg",
     ],
   },
 }
 
 export function generateStaticParams() {
   return [
-    { id: 'cleaning-2024' },
-    { id: 'disaster-prep-2024' },
-    { id: 'autumn-festival-2024' },
+    { id: '20260211' },
   ]
 }
 
@@ -123,45 +104,8 @@ export default async function ReportDetailPage({ params }: { params: Promise<{ i
             )}
           </div>
 
-          {/* Main Image */}
-          <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
-            <Image src={report.images[0] || "/placeholder.svg"} alt={report.title} fill className="object-cover" />
-          </div>
-
-          {/* Content */}
-          <Card className="p-6 md:p-8 mb-8">
-            <div className="prose prose-lg max-w-none">
-              {report.content.split("\n\n").map((paragraph, index) => (
-                <p key={index} className="text-base md:text-lg text-foreground leading-relaxed mb-4 last:mb-0">
-                  {paragraph.split("\n").map((line, lineIndex) => (
-                    <span key={lineIndex}>
-                      {line}
-                      {lineIndex < paragraph.split("\n").length - 1 && <br />}
-                    </span>
-                  ))}
-                </p>
-              ))}
-            </div>
-          </Card>
-
-          {/* Additional Images */}
-          {report.images.length > 1 && (
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-4">写真ギャラリー</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {report.images.slice(1).map((image, index) => (
-                  <div key={index} className="relative w-full h-64 rounded-lg overflow-hidden">
-                    <Image
-                      src={image || "/placeholder.svg"}
-                      alt={`${report.title} - 写真${index + 2}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Main Content */}
+          <ReportContent content={report.content} baseImagePath={`/reports/${id}/`} />
         </article>
 
         {/* Back Button */}
