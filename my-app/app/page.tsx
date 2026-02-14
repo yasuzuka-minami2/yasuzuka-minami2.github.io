@@ -1,9 +1,14 @@
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
-import { Bell, FileText, Calendar, Users, ChevronRight, CalendarDays, BookOpen, Megaphone, Book } from "lucide-react"
+import { FileText, Calendar, ChevronRight, CalendarDays, Megaphone, BookOpen, Book, MessageSquare } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
+  // 更新履歴データ（新しいものが上）
+  const updateHistory = [
+    { date: "2026年2月14日", text: "デジタル回覧板を公開しました" },
+  ]
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -38,7 +43,7 @@ export default function HomePage() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 md:py-12">
         {/* Welcome Message */}
-        <section className="mb-12 text-center">
+        <section className="mb-8 text-center">
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4">ようこそ</h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             新田南2組のデジタル回覧板へようこそ。
@@ -49,66 +54,30 @@ export default function HomePage() {
           </p>
         </section>
 
-        {/* Main Navigation Cards */}
+        {/* 更新履歴 */}
+        <section className="mb-10 text-left max-w-2xl mx-auto">
+          <h3 className="text-base md:text-lg font-bold text-foreground mb-3 px-2">📢 お知らせ</h3>
+          <ul className="space-y-2 px-2">
+            {updateHistory.map((item, index) => (
+              <li key={index} className="text-sm md:text-base text-foreground border-b border-border/50 pb-2">
+                <span className="text-muted-foreground mr-3 text-xs md:text-sm">{item.date}</span>
+                {item.text}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-2 text-right px-2">
+            <Link href="/news" className="text-sm text-primary hover:underline">
+              過去の更新履歴を見る →
+            </Link>
+          </div>
+        </section>
+
+        {/* Main Navigation Cards - 4つのみ */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {/* お知らせ */}
-          <Link href="/news">
-            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-0">
-                <span className="inline-block px-4 py-1 bg-accent/10 text-accent text-xs font-bold rounded-bl-lg">
-                  最新情報
-                </span>
-              </div>
-              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 pt-2">
-                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
-                  <Bell className="h-10 w-10 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
-                    お知らせ
-                    <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    自治会からの重要なお知らせや
-                    <br className="hidden md:block" />
-                    連絡事項をご確認いただけます
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </Link>
-
-          {/* 年間スケジュール */}
-          <Link href="/schedule">
-            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
-              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
-                  <CalendarDays className="h-10 w-10 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
-                    年間スケジュール
-                    <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    年間の行事予定や
-                    <br className="hidden md:block" />
-                    スケジュールをご確認いただけます
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </Link>
-
           {/* 回覧板 */}
           <Link href="/kairanban">
-            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-0">
-                <span className="inline-block px-4 py-1 bg-destructive/10 text-destructive text-xs font-bold rounded-bl-lg">
-                  要確認
-                </span>
-              </div>
-              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 pt-2">
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
                   <FileText className="h-10 w-10 text-primary" />
                 </div>
@@ -129,13 +98,8 @@ export default function HomePage() {
 
           {/* 広報 */}
           <Link href="/koho">
-            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-0">
-                <span className="inline-block px-4 py-1 bg-blue-500/10 text-blue-500 text-xs font-bold rounded-bl-lg">
-                  月二回発行
-                </span>
-              </div>
-              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 pt-2">
+            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
                   <Megaphone className="h-10 w-10 text-primary" />
                 </div>
@@ -176,66 +140,22 @@ export default function HomePage() {
             </Card>
           </Link>
 
-          {/* 組員情報 */}
-          <Link href="/members">
+          {/* 年間スケジュール */}
+          <Link href="/schedule">
             <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
-                  <Users className="h-10 w-10 text-primary" />
+                  <CalendarDays className="h-10 w-10 text-primary" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
-                    組員情報
+                    年間スケジュール
                     <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
-                    組長の連絡先や
+                    年間の行事予定や
                     <br className="hidden md:block" />
-                    緊急連絡網をご確認いただけます
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </Link>
-
-          {/* 安塚自治会規約 */}
-          <Link href="/rules">
-            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
-              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
-                  <BookOpen className="h-10 w-10 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
-                    安塚自治会規約
-                    <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    自治会の規約や
-                    <br className="hidden md:block" />
-                    ルールをご確認いただけます
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </Link>
-
-          {/* 新田南２組規約 */}
-          <Link href="/local-rules">
-            <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer group border-2 hover:border-primary">
-              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors self-start">
-                  <Book className="h-10 w-10 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
-                    新田南2組規約
-                    <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    組独自の取り決めや
-                    <br className="hidden md:block" />
-                    ルールをご確認いただけます
+                    スケジュールをご確認いただけます
                   </p>
                 </div>
               </div>
@@ -243,43 +163,27 @@ export default function HomePage() {
           </Link>
         </section>
 
-        {/* Info Section */}
-        <section className="bg-muted/50 rounded-lg p-6 md:p-8 border border-border">
-          <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 text-center">デジタル回覧板の使い方</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold">
-                1
-              </div>
-              <p className="text-base text-foreground font-medium">カードをタップ</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                見たい情報のカードを
-                <br className="hidden md:block" />
-                タップしてください
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold">
-                2
-              </div>
-              <p className="text-base text-foreground font-medium">内容を確認</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                お知らせや回覧情報を
-                <br className="hidden md:block" />
-                ゆっくりご確認ください
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold">
-                3
-              </div>
-              <p className="text-base text-foreground font-medium">確認フォーム入力</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                回覧板は確認フォームへの
-                <br className="hidden md:block" />
-                ご記入をお願いします
-              </p>
-            </div>
+        {/* 規約リンク */}
+        <section className="mb-8 text-center">
+          <Link href="/rules-list" className="inline-flex items-center gap-2 text-base md:text-lg text-primary hover:underline font-medium">
+            <BookOpen className="h-5 w-5" />
+            規約を見る
+          </Link>
+        </section>
+
+        {/* 組長情報 */}
+        <section className="text-center py-6">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScJgJgJgJgJgJg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full text-lg font-bold hover:opacity-90 transition-opacity shadow-md mb-4"
+          >
+            <MessageSquare className="h-6 w-6" />
+            組長への連絡はこちらから
+          </a>
+          <div className="text-sm text-muted-foreground">
+            <p>令和8年度 組長　河野 良太</p>
           </div>
         </section>
       </main>
