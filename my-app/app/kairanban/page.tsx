@@ -9,22 +9,22 @@ export default function KairanbanPage() {
       id: 3,
       issueNumber: "第三号",
       date: "2026年2月8日",
-      itemCount: 1,
-      summary: "防災訓練実施のご案内",
+      itemCount: 9,
+      summary: "組からのお知らせ（取り決め事項可決）、自治会回覧No.2、飯野公民館だより、結核レントゲン検診、犯罪被害を考える県民の集い、すずかロゲイニング、SUZUCHU NOW、ケーブルテレビ工事、緊急連絡網修正版",
     },
     {
       id: 2,
       issueNumber: "第二号",
       date: "2026年1月25日",
-      itemCount: 2,
-      summary: "資源ゴミ収集日変更、自治会費のお知らせ",
+      itemCount: 9,
+      summary: "安塚自治会ご挨拶、役員リスト、初集会の報告、要望事項MAP、組規約を探しています、講演会チラシ、環境部だより、行事計画・予算、宮当番割当表",
     },
     {
       id: 1,
       issueNumber: "第一号",
       date: "2026年1月11日",
-      itemCount: 3,
-      summary: "新年初集会、組名簿配布、新年の要望事項",
+      itemCount: 8,
+      summary: "初集会開催のお知らせ、行事計画（案）、名簿・緊急連絡網訂正届、住宅地図、飯野公民館だより、飯野民児協だより、名簿・緊急連絡網（配布）",
     },
   ]
 
