@@ -174,7 +174,7 @@ export default function HomePage() {
         {/* 組長情報 */}
         <section className="text-center py-6">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScJgJgJgJgJgJg/viewform"
+            href="https://forms.gle/pVLRgAcHxWyCa7gs6"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full text-lg font-bold hover:opacity-90 transition-opacity shadow-md mb-4"
