@@ -49,6 +49,23 @@ export default async function KairanbanDetailPage({ params }: { params: Promise<
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 md:py-12 max-w-4xl">
+        {/* Confirmation Form */}
+        <Card className="p-6 md:p-8 bg-primary/5 border-primary/30 mb-8">
+          <div className="text-center mb-6">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">確認フォーム</h2>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              回覧板の内容をご確認いただきましたら、必ず下記のフォームからご連絡をお願いします。
+            </p>
+          </div>
+          <a href={issue.formUrl} target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="w-full text-base md:text-lg py-6">
+              <FileText className="h-5 w-5 mr-2" />
+              確認フォームを開く
+              <ExternalLink className="h-4 w-4 ml-2" />
+            </Button>
+          </a>
+        </Card>
+
         {/* 全資料一括表示リンク */}
         <a href={`/kairanban/${id}/all.pdf`} target="_blank" rel="noopener noreferrer">
           <Card className="p-5 mb-8 bg-primary/5 border-primary/30 hover:bg-primary/10 hover:shadow-md transition-all cursor-pointer">
@@ -90,22 +107,7 @@ export default async function KairanbanDetailPage({ params }: { params: Promise<
           ))}
         </div>
 
-        {/* Confirmation Form */}
-        <Card className="p-6 md:p-8 bg-primary/5 border-primary/30">
-          <div className="text-center mb-6">
-            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">確認フォーム</h2>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              すべての内容をご確認いただきましたら、下記のフォームからご連絡をお願いします。
-            </p>
-          </div>
-          <a href={issue.formUrl} target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="w-full text-base md:text-lg py-6">
-              <FileText className="h-5 w-5 mr-2" />
-              確認フォームを開く
-              <ExternalLink className="h-4 w-4 ml-2" />
-            </Button>
-          </a>
-        </Card>
+
 
         <div className="mt-12 text-center">
           <Link href="/kairanban">
