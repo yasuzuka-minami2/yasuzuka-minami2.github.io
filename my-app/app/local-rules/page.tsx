@@ -1,3 +1,5 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { Book, ArrowLeft, ZoomIn } from "lucide-react"
 import Link from "next/link"
@@ -50,7 +52,7 @@ export default function LocalRulesPage() {
                                         <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
                                     </div>
                                     <Image
-                                        src="/images/wanted_rules.png"
+                                        src="/rules/local-rules/Wanted!!探しています！組規約.webp"
                                         alt="Wanted!! 探しています！組規約"
                                         width={600}
                                         height={850}
@@ -65,7 +67,7 @@ export default function LocalRulesPage() {
                                 <DialogTitle className="sr-only">組規約募集ポスター拡大</DialogTitle>
                                 <div className="w-full h-full flex items-center justify-center relative" onClick={(e) => e.stopPropagation()}>
                                     <Image
-                                        src="/images/wanted_rules.png"
+                                        src="/rules/local-rules/Wanted!!探しています！組規約.webp"
                                         alt="Wanted!! 探しています！組規約"
                                         fill
                                         className="object-contain"

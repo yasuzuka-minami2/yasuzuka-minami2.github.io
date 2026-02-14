@@ -80,7 +80,7 @@ export default function RootLayout({
   const gaId = "G-3VWPWX7FKK"
 
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <head>
         {gaId && (
           <>
