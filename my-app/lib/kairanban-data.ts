@@ -129,7 +129,7 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
                 isPrivate: false,
             },
         ],
-        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe3lDuZ4CT8Qnh7lavkuuvMNdFFWW5mluuDR4xofWJX-Vun-w/viewform?usp=dialog",
+        formUrl: "https://forms.gle/wr5K3m47Ccp2G2Y17",
     },
     "3": {
         issueNumber: "第三号",
@@ -190,6 +190,6 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
                 isPrivate: true,
             },
         ],
-        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe3lDuZ4CT8Qnh7lavkuuvMNdFFWW5mluuDR4xofWJX-Vun-w/viewform?usp=dialog",
+        formUrl: "https://forms.gle/F6V9ZEudw1FT4kQLA",
     },
 }
