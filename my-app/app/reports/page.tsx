@@ -8,10 +8,17 @@ export default function ReportsPage() {
   const reports = [
     {
       id: "20260211",
-      title: "御鍬祭（おくわさい）の開催",
+      title: "御鍬祭の開催",
       date: "2026年2月11日（水・祝）",
       excerpt: "寒さ残る冬空の下、御鍬祭を開催しました。",
       imageUrl: "/reports/20260211/1.jpg",
+    },
+    {
+      id: "20260117",
+      title: "令和8年度 初集会の開催",
+      date: "2026年1月17日（土）",
+      excerpt: "令和8年度の新田南2組初集会を開催し、新年度の活動方針などを話し合いました。",
+      imageUrl: "/reports/20260117/1.jpg",
     },
   ]
 

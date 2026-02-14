@@ -67,8 +67,8 @@ export default function KairanbanPage() {
             <div>
               <h2 className="text-lg font-bold text-foreground mb-2">回覧板の確認方法</h2>
               <p className="text-base text-foreground leading-relaxed">
-                各号をクリックすると、その回に配布されたすべてのPDF資料をご覧いただけます。 内容確認後、ページ下部の
-                <strong>確認フォーム</strong>でご連絡をお願いします。
+                各号をクリックすると、その回に配布されたすべてのPDF資料をご覧いただけます。 内容確認後、ページ上部の
+                <strong>「確認済みの連絡をする」ボタン</strong>よりご連絡をお願いします。
               </p>
             </div>
           </div>
