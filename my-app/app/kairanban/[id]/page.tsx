@@ -50,34 +50,39 @@ export default async function KairanbanDetailPage({ params }: { params: Promise<
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 md:py-12 max-w-4xl">
         {/* Confirmation Form */}
-        <Card className="p-6 md:p-8 bg-primary/5 border-primary/30 mb-8">
+        <Card className="p-6 md:p-8 bg-red-50 border-red-200 mb-8">
           <div className="text-center mb-6">
-            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">確認フォーム</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">回覧板確認連絡</h2>
             <p className="text-base text-muted-foreground leading-relaxed">
               回覧板の内容をご確認いただきましたら、必ず下記のフォームからご連絡をお願いします。
             </p>
           </div>
           <a href={issue.formUrl} target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="w-full text-base md:text-lg py-6">
+            <Button size="lg" className="w-full text-base md:text-lg py-6 bg-rose-500 hover:bg-rose-600 text-white font-bold shadow-md">
               <FileText className="h-5 w-5 mr-2" />
-              確認フォームを開く
+              確認済の連絡をする
               <ExternalLink className="h-4 w-4 ml-2" />
             </Button>
           </a>
         </Card>
 
         {/* 全資料一括表示リンク */}
-        <a href={`/kairanban/${id}/all.pdf`} target="_blank" rel="noopener noreferrer">
-          <Card className="p-5 mb-8 bg-primary/5 border-primary/30 hover:bg-primary/10 hover:shadow-md transition-all cursor-pointer">
-            <div className="flex items-center justify-center gap-3">
-              <Eye className="h-6 w-6 text-primary" />
-              <span className="text-lg font-bold text-primary">{issue.issueNumber}の全資料をまとめて見る（結合PDF）</span>
-            </div>
-            <p className="text-sm text-muted-foreground text-center mt-2">
-              公開{publicItemCount}件のPDFを1つに結合したファイルが開きます
-            </p>
-          </Card>
-        </a>
+        <Card className="p-6 md:p-8 mb-8 bg-secondary/10 border-secondary/30">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <Eye className="h-6 w-6 text-foreground" />
+            <span className="text-lg md:text-xl font-bold text-foreground">{issue.issueNumber}の全資料をまとめて閲覧する</span>
+          </div>
+          <p className="text-base text-muted-foreground text-center mb-6">
+            公開している{publicItemCount}件の回覧資料を一度に見ることができます。
+          </p>
+          <a href={`/kairanban/${id}/all.pdf`} target="_blank" rel="noopener noreferrer">
+            <Button variant="default" size="lg" className="w-full text-base py-6 shadow-lg bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-all hover:scale-[1.02]">
+              <Eye className="h-5 w-5 mr-2" />
+              まとめて閲覧する
+              <ExternalLink className="h-4 w-4 ml-2" />
+            </Button>
+          </a>
+        </Card>
 
         {/* PDF Items */}
         <div className="space-y-6 mb-12">
@@ -98,7 +103,7 @@ export default async function KairanbanDetailPage({ params }: { params: Promise<
                 <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="lg" className="w-full text-base py-6 bg-transparent">
                     <Download className="h-5 w-5 mr-2" />
-                    PDFを開く
+                    閲覧する
                     <ExternalLink className="h-4 w-4 ml-2" />
                   </Button>
                 </a>

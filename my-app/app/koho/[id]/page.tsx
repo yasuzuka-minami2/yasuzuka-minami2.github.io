@@ -123,7 +123,7 @@ export default async function KohoDetailPage({ params }: { params: Promise<{ id:
                             <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer">
                                 <Button variant="outline" size="lg" className="w-full text-base py-6 bg-transparent">
                                     <Download className="h-5 w-5 mr-2" />
-                                    PDFを開く
+                                    閲覧する
                                     <ExternalLink className="h-4 w-4 ml-2" />
                                 </Button>
                             </a>

@@ -26,7 +26,7 @@ export default function SchedulePage() {
                         <a href="/schedule/2026_schedule.pdf" target="_blank" rel="noopener noreferrer">
                             <Button variant="outline" className="w-full md:w-auto gap-2">
                                 <FileText className="h-4 w-4" />
-                                PDFを開く
+                                閲覧する
                             </Button>
                         </a>
                     </div>
