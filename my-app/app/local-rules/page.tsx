@@ -1,7 +1,14 @@
 import { Card } from "@/components/ui/card"
-import { Book, ArrowLeft } from "lucide-react"
+import { Book, ArrowLeft, ZoomIn } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import {
+    Dialog,
+    DialogContent,
+    DialogTrigger,
+    DialogTitle,
+} from "@/components/ui/dialog"
 
 export default function LocalRulesPage() {
     return (
@@ -21,14 +28,55 @@ export default function LocalRulesPage() {
                     </div>
                 </div>
 
-                <Card className="p-6 md:p-8 text-center min-h-[300px] flex flex-col justify-center items-center">
-                    <p className="text-muted-foreground text-lg mb-4">
-                        新田南２組規約の詳細は準備中です
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                        今後の更新をお待ちください
-                    </p>
-                </Card>
+                <div className="space-y-8">
+                    <Card className="p-6 md:p-8 text-center bg-yellow-50 border-yellow-200">
+                        <h2 className="text-xl md:text-2xl font-bold text-yellow-800 mb-4">
+                            探しています！組規約！
+                        </h2>
+                        <p className="text-lg text-yellow-900 mb-2 font-bold">
+                            令和8年度中に整備予定。
+                        </p>
+                        <p className="text-yellow-700">
+                            現在、過去の組規約や関連資料を探しています。<br />
+                            お持ちの方がいらっしゃいましたら、組長までご連絡ください。
+                        </p>
+                    </Card>
+
+                    <div className="flex justify-center">
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <div className="relative cursor-pointer group hover:opacity-90 transition-opacity">
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center">
+                                        <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+                                    </div>
+                                    <Image
+                                        src="/images/wanted_rules.png"
+                                        alt="Wanted!! 探しています！組規約"
+                                        width={600}
+                                        height={850}
+                                        className="rounded-lg shadow-lg max-w-full h-auto border-4 border-yellow-100"
+                                    />
+                                    <p className="text-center text-sm text-muted-foreground mt-2">
+                                        ※タップして拡大
+                                    </p>
+                                </div>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-[95vw] h-[90vh] p-0 overflow-hidden bg-transparent border-none shadow-none">
+                                <DialogTitle className="sr-only">組規約募集ポスター拡大</DialogTitle>
+                                <div className="w-full h-full flex items-center justify-center relative" onClick={(e) => e.stopPropagation()}>
+                                    <Image
+                                        src="/images/wanted_rules.png"
+                                        alt="Wanted!! 探しています！組規約"
+                                        fill
+                                        className="object-contain"
+                                        sizes="95vw"
+                                        priority
+                                    />
+                                </div>
+                            </DialogContent>
+                        </Dialog>
+                    </div>
+                </div>
 
                 <div className="mt-12 text-center">
                     <Link href="/">
