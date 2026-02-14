@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>令和8年度 回覧板配布一覧 - 安塚町新田南2組</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8fafc;
+        }
+        .table-container {
+            overflow-x: auto;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+        .badge-kairan {
+            background-color: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        .badge-haifu {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <!-- ヘッダー部分 -->
+        <header class="mb-8 text-center md:text-left bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">令和8年度 安塚町新田南2組 回覧板配布一覧</h1>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-500">
+                <span>作成日: 令和8年1月11日</span>
+                <span>最終更新日: 令和8年2月8日</span>
+                <span class="font-medium text-slate-700">組長: 河野 良太</span>
+            </div>
+        </header>
+
+        <!-- メインテーブル -->
+        <div class="table-container bg-white rounded-xl overflow-hidden border border-slate-200">
+            <table class="w-full border-collapse text-left text-sm md:text-base">
+                <thead>
+                    <tr class="bg-slate-800 text-white">
+                        <th class="py-4 px-4 font-bold border-b border-slate-700 text-center w-12">No</th>
+                        <th class="py-4 px-4 font-bold border-b border-slate-700 w-32">発行日</th>
+                        <th class="py-4 px-4 font-bold border-b border-slate-700 text-center w-12">No</th>
+                        <th class="py-4 px-4 font-bold border-b border-slate-700 w-20">種類</th>
+                        <th class="py-4 px-4 font-bold border-b border-slate-700">配布・回覧物 題目 (クリックで資料を表示)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                    <!-- 第3回 (2/8) -->
+                    <tr>
+                        <td rowspan="9" class="bg-slate-50 text-center font-bold border-r border-slate-200">3</td>
+                        <td rowspan="9" class="bg-slate-50 font-bold border-r border-slate-200 text-slate-700 text-center">2月8日</td>
+                        <td class="px-4 py-3 text-center text-slate-500">①</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline hover:text-blue-800">新田南2組回覧 組からのお知らせ</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">②</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">安塚町自治会回覧No.2 お知らせ</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">③</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">飯野公民館だより 379号</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">④</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">65歳以上の皆さんへ 結核レントゲン検診のお知らせ</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑤</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">チラシ 犯罪被害を考える県民の集い</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑥</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">チラシ 第5回すずかロゲイニング</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑦</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">SUZUCHU NOW VOL.83</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑧</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">ケーブルテレビ工事実施について(お願い)</a></td>
+                    </tr>
+                    <tr class="bg-red-50/30">
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100 font-bold italic">⑨</td>
+                        <td class="px-4 py-3"><span class="badge-haifu text-xs px-2 py-1 rounded-full font-bold">配布</span></td>
+                        <td class="px-4 py-3 font-medium"><a href="#" class="text-red-700 hover:underline">新田南2組 緊急連絡網(修正版)</a></td>
+                    </tr>
+
+                    <!-- 第2回 (1/25) -->
+                    <tr>
+                        <td rowspan="9" class="bg-slate-50 text-center font-bold border-r border-slate-200">2</td>
+                        <td rowspan="9" class="bg-slate-50 font-bold border-r border-slate-200 text-slate-700 text-center">1月25日</td>
+                        <td class="px-4 py-3 text-center text-slate-500">①</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">安塚町自治会より ご挨拶</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">②</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">令和8年 安塚町役員リスト</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">③</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">令和8年 組初集会の報告(全4頁)</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">④</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">自治会への要望事項MAP(全3頁)</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑤</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">Wanted!!! 探しています! 組規約 チラシ</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑥</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">講演会 How to 自治会チラシ</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑦</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">第二号 飯野地区地域づくり協議会 環境部だより</a></td>
+                    </tr>
+                    <tr class="bg-red-50/30">
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100 font-bold italic">⑧</td>
+                        <td class="px-4 py-3"><span class="badge-haifu text-xs px-2 py-1 rounded-full font-bold">配布</span></td>
+                        <td class="px-4 py-3 font-medium"><a href="#" class="text-red-700 hover:underline">2025年 安塚町 行事計画/町会計予算</a></td>
+                    </tr>
+                    <tr class="bg-red-50/30">
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100 font-bold italic">⑨</td>
+                        <td class="px-4 py-3"><span class="badge-haifu text-xs px-2 py-1 rounded-full font-bold">配布</span></td>
+                        <td class="px-4 py-3 font-medium"><a href="#" class="text-red-700 hover:underline">新田南2組 宮当番割表</a></td>
+                    </tr>
+
+                    <!-- 第1回 (1/11) -->
+                    <tr>
+                        <td rowspan="8" class="bg-slate-50 text-center font-bold border-r border-slate-200">1</td>
+                        <td rowspan="8" class="bg-slate-50 font-bold border-r border-slate-200 text-slate-700 text-center">1月11日</td>
+                        <td class="px-4 py-3 text-center text-slate-500">①</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">令和8年度初集会開催のお知らせ</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">②</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">令和8年 安塚町 行事計画(案)</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">③</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">名簿・緊急連絡網訂正届</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">④</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">新田南2組 住宅地図</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑤</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">飯野公民館だより</a></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100">⑥</td>
+                        <td class="px-4 py-3"><span class="badge-kairan text-xs px-2 py-1 rounded-full font-bold">回覧</span></td>
+                        <td class="px-4 py-3"><a href="#" class="text-blue-600 hover:underline">飯野民児協だより</a></td>
+                    </tr>
+                    <tr class="bg-red-50/30">
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100 font-bold italic text-slate-600">⑦</td>
+                        <td class="px-4 py-3"><span class="badge-haifu text-xs px-2 py-1 rounded-full font-bold">配布</span></td>
+                        <td class="px-4 py-3 font-medium"><a href="#" class="text-red-700 hover:underline">新田南2組 名簿</a></td>
+                    </tr>
+                    <tr class="bg-red-50/30">
+                        <td class="px-4 py-3 text-center text-slate-500 border-l border-slate-100 font-bold italic text-slate-600">⑧</td>
+                        <td class="px-4 py-3"><span class="badge-haifu text-xs px-2 py-1 rounded-full font-bold">配布</span></td>
+                        <td class="px-4 py-3 font-medium"><a href="#" class="text-red-700 hover:underline">新田南2組 緊急連絡網</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 注意事項 -->
+        <footer class="mt-8 grid md:grid-cols-2 gap-4">
+            <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                <h3 class="font-bold text-green-800 mb-1">【回覧物】について</h3>
+                <p class="text-sm text-green-700 leading-relaxed">
+                    内容をご確認のうえ、速やかに次のご家庭へ回覧してください。
+                </p>
+            </div>
+            <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+                <h3 class="font-bold text-red-800 mb-1">【配布物】について</h3>
+                <p class="text-sm text-red-700 leading-relaxed">
+                    各ご家庭で1部ずつお取りいただき、大切に保管してください。
+                </p>
+            </div>
+        </footer>
+        
+        <div class="mt-6 text-center text-slate-400 text-xs">
+            © 令和8年度 安塚町新田南2組 自治会管理システム
+        </div>
+    </div>
+
+</body>
+</html>

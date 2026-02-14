@@ -50,6 +50,16 @@ export default function KairanbanPage() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 md:py-12">
+        {/* Archive Link Button */}
+        <div className="mb-8 text-center md:text-left">
+          <Link href="/kairanban/archive">
+            <Button size="lg" variant="outline" className="w-full md:w-auto font-bold border-2 hover:bg-slate-50">
+              <FileText className="h-5 w-5 mr-2" />
+              回覧板配布一覧表を見る
+            </Button>
+          </Link>
+        </div>
+
         {/* Instructions */}
         <Card className="p-6 mb-8 bg-accent/10 border-accent/30">
           <div className="flex items-start gap-4">
