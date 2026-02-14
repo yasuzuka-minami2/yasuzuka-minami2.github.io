@@ -193,7 +193,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-6 md:py-8">
           <div className="text-center space-y-2">
             <p className="text-sm text-muted-foreground">安塚町自治会 新田南2組</p>
-            <p className="text-sm text-muted-foreground">〒513-0012 三重県鈴鹿市安塚町</p>
+            <p className="text-sm text-muted-foreground">〒513-0818 三重県鈴鹿市安塚町</p>
             <p className="text-xs text-muted-foreground mt-4">令和8年度（2026年）組長 | デジタル回覧板</p>
           </div>
         </div>
