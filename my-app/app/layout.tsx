@@ -80,7 +80,7 @@ export default function RootLayout({
   const gaId = "G-3VWPWX7FKK"
 
   return (
-    <html lang="ja" suppressHydrationWarning>
+    <html lang="ja" suppressHydrationWarning className="scroll-smooth">
       <head>
         {gaId && (
           <>
