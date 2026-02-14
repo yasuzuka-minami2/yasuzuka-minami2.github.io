@@ -40,8 +40,28 @@ export default function SchedulePage() {
                             <div className="gyoji-subtitle">2026年 予定表</div>
                         </header>
 
+                        {/* Month Navigation */}
+                        <nav className="flex flex-wrap gap-3 justify-center mb-8 px-2">
+                            {[2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 1].map((month) => (
+                                <a
+                                    key={month}
+                                    href={`#month-${month}`}
+                                    className="text-primary hover:text-primary/80 font-bold border-b-2 border-transparent hover:border-primary transition-colors text-lg"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        const element = document.getElementById(`month-${month}`);
+                                        if (element) {
+                                            element.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}
+                                >
+                                    {month}月
+                                </a>
+                            ))}
+                        </nav>
+
                         {/* 2月 */}
-                        <h3 className="gyoji-month-heading">2月</h3>
+                        <h3 id="month-2" className="gyoji-month-heading scroll-mt-20">2月</h3>
                         <div className="gyoji-list">
                             <div className="gyoji-card">
                                 <div className="gyoji-card-header">
@@ -69,7 +89,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 3月 */}
-                        <h3 className="gyoji-month-heading">3月</h3>
+                        <h3 id="month-3" className="gyoji-month-heading scroll-mt-20">3月</h3>
                         <div className="gyoji-list">
                             <div className="gyoji-card">
                                 <div className="gyoji-card-header">
@@ -94,7 +114,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 4月 */}
-                        <h3 className="gyoji-month-heading">4月</h3>
+                        <h3 id="month-4" className="gyoji-month-heading scroll-mt-20">4月</h3>
                         <div className="gyoji-list">
                             {/* 4/5 1つ目 */}
                             <div className="gyoji-card">
@@ -157,7 +177,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 5月 */}
-                        <h3 className="gyoji-month-heading">5月</h3>
+                        <h3 id="month-5" className="gyoji-month-heading scroll-mt-20">5月</h3>
                         <div className="gyoji-list">
                             <div className="gyoji-card">
                                 <div className="gyoji-card-header">
@@ -205,7 +225,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 6月 */}
-                        <h3 className="gyoji-month-heading">6月</h3>
+                        <h3 id="month-6" className="gyoji-month-heading scroll-mt-20">6月</h3>
                         <div className="gyoji-list">
                             <div className="gyoji-card">
                                 <div className="gyoji-card-header">
@@ -230,7 +250,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 7月 */}
-                        <h3 className="gyoji-month-heading">7月</h3>
+                        <h3 id="month-7" className="gyoji-month-heading scroll-mt-20">7月</h3>
                         <div className="gyoji-list">
                             {/* 7/5 */}
                             <div className="gyoji-card">
@@ -307,7 +327,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 8月 */}
-                        <h3 className="gyoji-month-heading">8月</h3>
+                        <h3 id="month-8" className="gyoji-month-heading scroll-mt-20">8月</h3>
                         <div className="gyoji-list">
                             <div className="gyoji-card">
                                 <div className="gyoji-card-header">
@@ -328,7 +348,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 10月 */}
-                        <h3 className="gyoji-month-heading">10月</h3>
+                        <h3 id="month-10" className="gyoji-month-heading scroll-mt-20">10月</h3>
                         <div className="gyoji-list">
                             {/* 10/10 1つ目 */}
                             <div className="gyoji-card">
@@ -395,7 +415,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 11月 */}
-                        <h3 className="gyoji-month-heading">11月</h3>
+                        <h3 id="month-11" className="gyoji-month-heading scroll-mt-20">11月</h3>
                         <div className="gyoji-list">
                             {/* 11/1 1つ目 */}
                             <div className="gyoji-card">
@@ -458,7 +478,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 12月 */}
-                        <h3 className="gyoji-month-heading">12月</h3>
+                        <h3 id="month-12" className="gyoji-month-heading scroll-mt-20">12月</h3>
                         <div className="gyoji-list">
                             <div className="gyoji-card">
                                 <div className="gyoji-card-header">
@@ -529,7 +549,7 @@ export default function SchedulePage() {
                         </div>
 
                         {/* 1月 */}
-                        <h3 className="gyoji-month-heading">2027年 1月</h3>
+                        <h3 id="month-1" className="gyoji-month-heading scroll-mt-20">2027年 1月</h3>
                         <div className="gyoji-list">
                             <div className="gyoji-card">
                                 <div className="gyoji-card-header">

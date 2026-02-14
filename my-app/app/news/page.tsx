@@ -41,11 +41,6 @@ export default function NewsPage() {
             <div key={item.id} className="border-b border-border/50 pb-8 last:border-0">
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-sm text-muted-foreground mr-2">{item.date}</span>
-                {item.important && (
-                  <span className="text-xs font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">
-                    重要
-                  </span>
-                )}
               </div>
               <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{item.title}</h3>
               <p className="text-base text-foreground/80 leading-relaxed whitespace-pre-line">
