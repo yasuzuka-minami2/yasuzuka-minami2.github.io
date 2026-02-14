@@ -1,7 +1,6 @@
 import Link from "next/link"
-import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Bell } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 
 export default function NewsPage() {
   // 実際のお知らせ情報はここに追加してください
@@ -46,45 +45,37 @@ export default function NewsPage() {
             </Link>
           </div>
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-bold text-foreground">お知らせ</h1>
-            <p className="text-base md:text-lg text-muted-foreground mt-2">新田南2組からのお知らせ</p>
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground">お知らせ</h1>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 md:py-12">
-        <div className="space-y-6">
+      <main className="container mx-auto px-4 py-8 md:py-12 max-w-3xl">
+        <div className="space-y-8">
           {newsItems.map((item) => (
-            <Card key={item.id} className="p-6 md:p-8">
-              <div className="flex items-start gap-4 mb-4">
-                {item.important && <Bell className="h-6 w-6 text-accent mt-1 flex-shrink-0" />}
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2 flex-wrap">
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground">{item.title}</h3>
-                    {item.important && (
-                      <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full">
-                        重要
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4">{item.date}</p>
-                  <p className="text-base md:text-lg text-foreground leading-relaxed whitespace-pre-line">
-                    {item.content}
-                  </p>
-                </div>
+            <div key={item.id} className="border-b border-border/50 pb-8 last:border-0">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-sm text-muted-foreground mr-2">{item.date}</span>
+                {item.important && (
+                  <span className="text-xs font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">
+                    重要
+                  </span>
+                )}
               </div>
-            </Card>
+              <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{item.title}</h3>
+              <p className="text-base text-foreground/80 leading-relaxed whitespace-pre-line">
+                {item.content}
+              </p>
+            </div>
           ))}
         </div>
 
         {/* Empty State */}
         {newsItems.length === 0 && (
-          <Card className="p-12 text-center">
-            <Bell className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-foreground mb-2">現在、お知らせはありません</h3>
-            <p className="text-base text-muted-foreground">新しいお知らせが掲載されると、こちらに表示されます。</p>
-          </Card>
+          <div className="py-12 text-center text-muted-foreground">
+            <p>現在、お知らせはありません。</p>
+          </div>
         )}
 
         <div className="mt-12 text-center">
