@@ -16,7 +16,7 @@ export default function ReportContent({ content, baseImagePath }: ReportContentP
     // マークダウンの行を解析してレンダリングする関数
     const renderContent = () => {
         const lines = content.split("\n")
-        const elements: JSX.Element[] = []
+        const elements: React.ReactNode[] = []
         let key = 0
 
         for (let i = 0; i < lines.length; i++) {
