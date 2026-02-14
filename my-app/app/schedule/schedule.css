@@ -1,0 +1,243 @@
+/* * 埋め込み用スタイルシート
+ * 既存サイトのCSSと競合しないよう、クラス名に .gyoji- を付与し、
+ * 全体を .gyoji-wrapper で囲っています。
+ */
+
+.gyoji-wrapper {
+    /* --- 設定変数（サイトに合わせてここを変更できます） --- */
+    --gyoji-primary: #2E5C55;
+    /* メインカラー：落ち着いた緑 */
+    --gyoji-accent: #C64949;
+    /* アクセント：祝日などの赤 */
+    --gyoji-text: #333333;
+    /* 文字色 */
+    --gyoji-bg: #FFFFFF;
+    /* 背景色 */
+    --gyoji-border: #E5E7EB;
+    /* 枠線の色 */
+
+    font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: var(--gyoji-text);
+    line-height: 1.6;
+    max-width: 900px;
+    /* 横幅の最大値 */
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* 全称セレクタによるリセット（このラッパー内のみ） */
+.gyoji-wrapper * {
+    box-sizing: border-box;
+}
+
+/* --- ヘッダーエリア --- */
+.gyoji-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gyoji-primary);
+}
+
+.gyoji-title {
+    font-size: 1.8rem;
+    color: var(--gyoji-primary);
+    margin: 0;
+    font-weight: 700;
+}
+
+.gyoji-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+/* --- 月ごとの見出し --- */
+.gyoji-month-heading {
+    font-size: 1.5rem;
+    color: var(--gyoji-text);
+    margin: 40px 0 20px;
+    padding-left: 15px;
+    border-left: 5px solid var(--gyoji-primary);
+    background: linear-gradient(to right, #f3fcf9, transparent);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 0 4px 4px 0;
+}
+
+/* --- カード型リスト --- */
+.gyoji-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gyoji-card {
+    background-color: var(--gyoji-bg);
+    border: 1px solid var(--gyoji-border);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s ease;
+}
+
+.gyoji-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 日付とタイトル */
+.gyoji-card-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed var(--gyoji-border);
+    padding-bottom: 10px;
+}
+
+.gyoji-date {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gyoji-primary);
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.gyoji-date.holiday {
+    color: var(--gyoji-accent);
+}
+
+.gyoji-event-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* 詳細部分 */
+.gyoji-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+    .gyoji-details {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+.gyoji-detail-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.gyoji-label {
+    font-size: 0.85rem;
+    color: #666;
+    background-color: #f5f5f5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 4px;
+    align-self: flex-start;
+}
+
+/* 2つ目のラベル（式典など）用 */
+.gyoji-label.secondary {
+    margin-top: 10px;
+    background-color: #e8f0ee;
+    /* 少し色を変えて区別 */
+    color: var(--gyoji-primary);
+}
+
+.gyoji-content {
+    font-weight: 500;
+    font-size: 1.05rem;
+    /* 見やすく少し大きく */
+}
+
+.gyoji-content.highlight {
+    color: var(--gyoji-accent);
+    font-weight: bold;
+}
+
+/* --- テーブル（当番表） --- */
+.gyoji-table-section {
+    background-color: #f9fafb;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 50px;
+    border: 1px solid var(--gyoji-border);
+}
+
+.gyoji-table-title {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--gyoji-primary);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    display: inline-block;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.gyoji-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.gyoji-table th,
+.gyoji-table td {
+    border: 1px solid var(--gyoji-border);
+    padding: 12px;
+    text-align: left;
+}
+
+.gyoji-table th {
+    background-color: #eff3f2;
+    /* 薄い緑グレー */
+    color: var(--gyoji-primary);
+    font-weight: bold;
+    width: 30%;
+    white-space: nowrap;
+}
+
+/* --- フッター --- */
+.gyoji-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #888;
+    border-top: 1px solid var(--gyoji-border);
+    padding-top: 20px;
+}
+
+/* --- レスポンシブ対応（スマホ） --- */
+@media (max-width: 600px) {
+    .gyoji-date {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .gyoji-event-name {
+        font-size: 1.15rem;
+    }
+
+    .gyoji-table th,
+    .gyoji-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .gyoji-table th {
+        background-color: #e6f0ed;
+        border-bottom: none;
+    }
+}

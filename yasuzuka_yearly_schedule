@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>令和8年 安塚町 行事計画（Web埋め込み版）</title>
+    <!-- フォント読み込み（必要な場合のみ。既存サイトで読み込まれていれば不要） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* * 埋め込み用スタイルシート
+         * 既存サイトのCSSと競合しないよう、クラス名に .gyoji- を付与し、
+         * 全体を .gyoji-wrapper で囲っています。
+         */
+
+        .gyoji-wrapper {
+            /* --- 設定変数（サイトに合わせてここを変更できます） --- */
+            --gyoji-primary: #2E5C55;
+            /* メインカラー：落ち着いた緑 */
+            --gyoji-accent: #C64949;
+            /* アクセント：祝日などの赤 */
+            --gyoji-text: #333333;
+            /* 文字色 */
+            --gyoji-bg: #FFFFFF;
+            /* 背景色 */
+            --gyoji-border: #E5E7EB;
+            /* 枠線の色 */
+
+            font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            color: var(--gyoji-text);
+            line-height: 1.6;
+            max-width: 900px;
+            /* 横幅の最大値 */
+            margin: 0 auto;
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+
+        /* 全称セレクタによるリセット（このラッパー内のみ） */
+        .gyoji-wrapper * {
+            box-sizing: border-box;
+        }
+
+        /* --- ヘッダーエリア --- */
+        .gyoji-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--gyoji-primary);
+        }
+
+        .gyoji-title {
+            font-size: 1.8rem;
+            color: var(--gyoji-primary);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .gyoji-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+            font-weight: normal;
+        }
+
+        /* --- 月ごとの見出し --- */
+        .gyoji-month-heading {
+            font-size: 1.5rem;
+            color: var(--gyoji-text);
+            margin: 40px 0 20px;
+            padding-left: 15px;
+            border-left: 5px solid var(--gyoji-primary);
+            background: linear-gradient(to right, #f3fcf9, transparent);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* --- カード型リスト --- */
+        .gyoji-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .gyoji-card {
+            background-color: var(--gyoji-bg);
+            border: 1px solid var(--gyoji-border);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .gyoji-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 日付とタイトル */
+        .gyoji-card-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed var(--gyoji-border);
+            padding-bottom: 10px;
+        }
+
+        .gyoji-date {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gyoji-primary);
+            margin-right: 15px;
+            white-space: nowrap;
+        }
+
+        .gyoji-date.holiday {
+            color: var(--gyoji-accent);
+        }
+
+        .gyoji-event-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        /* 詳細部分 */
+        .gyoji-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .gyoji-details {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        .gyoji-detail-row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gyoji-label {
+            font-size: 0.85rem;
+            color: #666;
+            background-color: #f5f5f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 4px;
+            align-self: flex-start;
+        }
+
+        /* 2つ目のラベル（式典など）用 */
+        .gyoji-label.secondary {
+            margin-top: 10px;
+            background-color: #e8f0ee;
+            /* 少し色を変えて区別 */
+            color: var(--gyoji-primary);
+        }
+
+        .gyoji-content {
+            font-weight: 500;
+            font-size: 1.05rem;
+            /* 見やすく少し大きく */
+        }
+
+        .gyoji-content.highlight {
+            color: var(--gyoji-accent);
+            font-weight: bold;
+        }
+
+        /* --- テーブル（当番表） --- */
+        .gyoji-table-section {
+            background-color: #f9fafb;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 50px;
+            border: 1px solid var(--gyoji-border);
+        }
+
+        .gyoji-table-title {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--gyoji-primary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            display: inline-block;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
+        .gyoji-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .gyoji-table th,
+        .gyoji-table td {
+            border: 1px solid var(--gyoji-border);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .gyoji-table th {
+            background-color: #eff3f2;
+            /* 薄い緑グレー */
+            color: var(--gyoji-primary);
+            font-weight: bold;
+            width: 30%;
+            white-space: nowrap;
+        }
+
+        /* --- フッター --- */
+        .gyoji-footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid var(--gyoji-border);
+            padding-top: 20px;
+        }
+
+        /* --- レスポンシブ対応（スマホ） --- */
+        @media (max-width: 600px) {
+            .gyoji-date {
+                font-size: 1.2rem;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            .gyoji-event-name {
+                font-size: 1.15rem;
+            }
+
+            .gyoji-table th,
+            .gyoji-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .gyoji-table th {
+                background-color: #e6f0ed;
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ここから下をWebサイトの表示したい箇所にコピー＆ペーストしてください -->
+    <div class="gyoji-wrapper">
+
+        <header class="gyoji-header">
+            <h2 class="gyoji-title">令和8年 安塚町 行事計画</h2>
+            <div class="gyoji-subtitle">2026年 予定表</div>
+        </header>
+
+        <!-- 2月 -->
+        <h3 class="gyoji-month-heading">2月</h3>
+        <div class="gyoji-list">
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date holiday">2月11日(水・祝)</span>
+                    <span class="gyoji-event-name">御鍬祭 (幟立て)</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+
+                        <span class="gyoji-label secondary">式典</span>
+                        <span class="gyoji-content">14:30〜</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">神社掃除、式典準備</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸（神社当番組）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3月 -->
+        <h3 class="gyoji-month-heading">3月</h3>
+        <div class="gyoji-list">
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">3月24日(火)</span>
+                    <span class="gyoji-event-name">地蔵堂祭</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">午前中開催予定</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸（地蔵堂当番組）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4月 -->
+        <h3 class="gyoji-month-heading">4月</h3>
+        <div class="gyoji-list">
+            <!-- 4/5 1つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">4月5日(日)</span>
+                    <span class="gyoji-event-name">第一回 家庭排水溝清掃</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸、寺家一部（各組で実施）</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 4/5 2つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">4月5日(日)</span>
+                    <span class="gyoji-event-name">農用用水溝清掃・工場排水溝清掃</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">時間</span>
+                        <span class="gyoji-content">家庭排水清掃後</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">農家全戸 <br><small>※作業内容により2〜3月に変更あり</small></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 4/12 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">4月12日(日)</span>
+                    <span class="gyoji-event-name">春の祭礼 (幟立て)</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+
+                        <span class="gyoji-label secondary">式典</span>
+                        <span class="gyoji-content">14:30〜</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">神社清掃、式典準備</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸（神社当番組）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5月 -->
+        <h3 class="gyoji-month-heading">5月</h3>
+        <div class="gyoji-list">
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date holiday">5月3日(日・祝)</span>
+                    <span class="gyoji-event-name">野上がり</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30（総会 09:45〜）</span>
+
+                        <span class="gyoji-label secondary">式典</span>
+                        <span class="gyoji-content">10:30〜</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">神社清掃、式典準備</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">農家全戸</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">5月24日(日)</span>
+                    <span class="gyoji-event-name">町民運動会</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">09:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">午前中予定（予備日：5月31日）</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全員</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6月 -->
+        <h3 class="gyoji-month-heading">6月</h3>
+        <div class="gyoji-list">
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">6月7日(日)</span>
+                    <span class="gyoji-event-name">宮池・排水周辺草刈</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">場所</span>
+                        <span class="gyoji-content">宮池・新田、笊池集合</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">農家全戸</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7月 -->
+        <h3 class="gyoji-month-heading">7月</h3>
+        <div class="gyoji-list">
+            <!-- 7/5 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">7月5日(日)</span>
+                    <span class="gyoji-event-name">祭礼用具虫干し、神社清掃、堤防草刈</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">備考</span>
+                        <span class="gyoji-content">天候によりコスモス種まき予定</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">神社当番組</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 7/19 1つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">7月19日(日)</span>
+                    <span class="gyoji-event-name">墓地掃除</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">06:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">墓地関係者全員</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 7/19 2つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">7月19日(日)</span>
+                    <span class="gyoji-event-name">祭礼用具虫干し予備日</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">神社当番組</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 7/19 3つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">7月19日(日)</span>
+                    <span class="gyoji-event-name">神社清掃、堤防草刈（予備日）</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">09:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">コスモス種まき予備日（守る会）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8月 -->
+        <h3 class="gyoji-month-heading">8月</h3>
+        <div class="gyoji-list">
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">8月2日(日)</span>
+                    <span class="gyoji-event-name">農用排水溝掃除、草刈後 宮池、排水周辺草刈</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">07:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">農家全戸</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10月 -->
+        <h3 class="gyoji-month-heading">10月</h3>
+        <div class="gyoji-list">
+            <!-- 10/10 1つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">10月10日(土)</span>
+                    <span class="gyoji-event-name">秋の祭礼準備（幟立て、提灯、行灯）</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">神社掃除（全戸）、提灯行灯枠準備、神社当番組</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 10/10 2つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">10月10日(土)</span>
+                    <span class="gyoji-event-name highlight">コスモス・秋祭り・防災訓練</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">11:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">備考</span>
+                        <span class="gyoji-content">飲食・ふるまいは11:00頃より</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 10/11 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">10月11日(日)</span>
+                    <span class="gyoji-event-name">秋の大祭</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+
+                        <span class="gyoji-label secondary">式典</span>
+                        <span class="gyoji-content">14:30〜</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">神社掃除、祭礼準備</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸（神社当番組）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11月 -->
+        <h3 class="gyoji-month-heading">11月</h3>
+        <div class="gyoji-list">
+            <!-- 11/1 1つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">11月1日(日)</span>
+                    <span class="gyoji-event-name">第二回 家庭排水溝清掃</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸、寺家一部（各組で実施）</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 11/1 2つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">11月1日(日)</span>
+                    <span class="gyoji-event-name">宮池、排水周辺草刈</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">10:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">農家全戸</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 11/23 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date holiday">11月23日(月・祝)</span>
+                    <span class="gyoji-event-name">新嘗祭</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+
+                        <span class="gyoji-label secondary">式典</span>
+                        <span class="gyoji-content">14:30〜</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">神社掃除、式典準備</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸（神社当番組）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12月 -->
+        <h3 class="gyoji-month-heading">12月</h3>
+        <div class="gyoji-list">
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">12月6日(日)</span>
+                    <span class="gyoji-event-name">年末勘定</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">時間</span>
+                        <span class="gyoji-content">09:00〜11:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">土木費、墓地管理費、役員手当等</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">12月13日(日)</span>
+                    <span class="gyoji-event-name">農家集会</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">時間</span>
+                        <span class="gyoji-content">19:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">役員選挙他（農家全戸）</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 12/31 1つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">12月31日(木)</span>
+                    <span class="gyoji-event-name">年末大掃除、篝火・旦祭準備</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">集合</span>
+                        <span class="gyoji-content">08:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">神社・参集会館大掃除（全戸）、神社当番組</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 12/31 2つ目 -->
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">12月31日(木)</span>
+                    <span class="gyoji-event-name">年越し篝火</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">時間</span>
+                        <span class="gyoji-content">23:30〜翌01:30</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">役員全員</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1月 -->
+        <h3 class="gyoji-month-heading">2027年 1月</h3>
+        <div class="gyoji-list">
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date holiday">1月1日(金・祝)</span>
+                    <span class="gyoji-event-name">大篝火・歳旦祭</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">大篝火</span>
+                        <span class="gyoji-content">01:30〜10:00</span>
+
+                        <span class="gyoji-label secondary">式典</span>
+                        <span class="gyoji-content">07:00〜</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">内容</span>
+                        <span class="gyoji-content">歳旦祭式典（全戸）、片付け（篝火当番）</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gyoji-card">
+                <div class="gyoji-card-header">
+                    <span class="gyoji-date">1月10日(日)</span>
+                    <span class="gyoji-event-name">定期総会</span>
+                </div>
+                <div class="gyoji-details">
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">時間</span>
+                        <span class="gyoji-content">09:00</span>
+                    </div>
+                    <div class="gyoji-detail-row">
+                        <span class="gyoji-label">対象</span>
+                        <span class="gyoji-content">全戸</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 当番表セクション -->
+        <section class="gyoji-table-section">
+            <h3 class="gyoji-table-title">各組 当番表</h3>
+
+            <h4>参集会館掃除担当（月当番）</h4>
+            <table class="gyoji-table">
+                <tbody>
+                    <tr>
+                        <th>1月</th>
+                        <td>東組</td>
+                    </tr>
+                    <tr>
+                        <th>2月</th>
+                        <td>西1組</td>
+                    </tr>
+                    <tr>
+                        <th>3月</th>
+                        <td>西2組</td>
+                    </tr>
+                    <tr>
+                        <th>4月</th>
+                        <td>南1組</td>
+                    </tr>
+                    <tr>
+                        <th>5月</th>
+                        <td>南2組</td>
+                    </tr>
+                    <tr>
+                        <th>6月</th>
+                        <td>南3組</td>
+                    </tr>
+                    <tr>
+                        <th>7月</th>
+                        <td>新南組</td>
+                    </tr>
+                    <tr>
+                        <th>8月</th>
+                        <td>ニュータウン1組</td>
+                    </tr>
+                    <tr>
+                        <th>9月</th>
+                        <td>ニュータウン2組</td>
+                    </tr>
+                    <tr>
+                        <th>10月</th>
+                        <td>ニュータウン3組</td>
+                    </tr>
+                    <tr>
+                        <th>11月</th>
+                        <td>北組</td>
+                    </tr>
+                    <tr>
+                        <th>12月</th>
+                        <td>南組</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>その他当番</h4>
+            <table class="gyoji-table">
+                <tbody>
+                    <tr>
+                        <th>神社当番</th>
+                        <td>東組、西1組、西2組、南2組、ニュータウン2組、ニュータウン3組</td>
+                    </tr>
+                    <tr>
+                        <th>地蔵当番</th>
+                        <td>南組、南2組、ニュータウン2組</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer class="gyoji-footer">
+            <p>2026年（令和8年）安塚町行事計画<br>※天候等により変更になる場合があります。</p>
+        </footer>
+
+    </div>
+    <!-- 埋め込みここまで -->
+
+</body>
+
+</html>
