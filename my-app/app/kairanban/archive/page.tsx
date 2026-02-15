@@ -137,6 +137,15 @@ export default function KairanbanArchivePage() {
                     </p>
                 </div>
 
+                <div className="mt-12 text-center">
+                    <Link href="/kairanban">
+                        <Button size="lg" className="text-base px-8">
+                            <ArrowLeft className="h-5 w-5 mr-2" />
+                            回覧板トップへ戻る
+                        </Button>
+                    </Link>
+                </div>
+
                 <div className="mt-6 text-center text-slate-400 text-xs">
                     © 令和8年度 安塚町新田南2組 自治会管理システム
                 </div>

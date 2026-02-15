@@ -43,21 +43,20 @@ export default function SchedulePage() {
                         {/* Month Navigation */}
                         <nav className="flex flex-wrap gap-3 justify-center mb-8 px-2">
                             {[2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 1].map((month) => (
-                                <a
+                                <Link
                                     key={month}
                                     href={`#month-${month}`}
                                     className="text-primary hover:text-primary/80 font-bold border-b-2 border-transparent hover:border-primary transition-colors text-lg"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        const element = document.getElementById(`month-${month}`);
-                                        if (element) {
-                                            element.scrollIntoView({ behavior: 'smooth' });
-                                        }
-                                    }}
                                 >
                                     {month}月
-                                </a>
+                                </Link>
                             ))}
+                            <Link
+                                href="#duty-roster"
+                                className="text-primary hover:text-primary/80 font-bold border-b-2 border-transparent hover:border-primary transition-colors text-lg"
+                            >
+                                各組当番表
+                            </Link>
                         </nav>
 
                         {/* 2月 */}
@@ -590,7 +589,7 @@ export default function SchedulePage() {
 
                         {/* 当番表セクション */}
                         <section className="gyoji-table-section">
-                            <h3 className="gyoji-table-title">各組 当番表</h3>
+                            <h3 id="duty-roster" className="gyoji-table-title scroll-mt-20">各組 当番表</h3>
 
                             <h4>参集会館掃除担当（月当番）</h4>
                             <table className="gyoji-table">

@@ -49,22 +49,7 @@ export default async function KairanbanDetailPage({ params }: { params: Promise<
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 md:py-12 max-w-4xl">
-        {/* Confirmation Form */}
-        <Card className="p-6 md:p-8 bg-red-50 border-red-200 mb-8">
-          <div className="text-center mb-6">
-            <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">回覧板確認連絡</h2>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              回覧板の内容をご確認いただきましたら、必ず下記のフォームからご連絡をお願いします。
-            </p>
-          </div>
-          <a href={issue.formUrl} target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="w-full text-base md:text-lg py-6 bg-rose-500 hover:bg-rose-600 text-white font-bold shadow-md">
-              <FileText className="h-5 w-5 mr-2" />
-              確認済の連絡をする
-              <ExternalLink className="h-4 w-4 ml-2" />
-            </Button>
-          </a>
-        </Card>
+
 
         {/* 全資料一括表示リンク */}
         <Card className="p-6 md:p-8 mb-8 bg-secondary/10 border-secondary/30">

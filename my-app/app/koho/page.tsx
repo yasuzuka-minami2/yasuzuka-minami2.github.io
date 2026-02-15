@@ -64,9 +64,9 @@ export default function KohoPage() {
                         <div>
                             <h2 className="text-lg font-bold text-foreground mb-2">広報の確認方法</h2>
                             <p className="text-base text-foreground leading-relaxed">
-                                各回をクリックすると、その回に発行された広報紙等（PDF）をご覧いただけます。
+                                各回をクリックすると、その回に発行された広報紙等をご覧いただけます。
                                 <br />
-                                市や地区からの情報を定期的にご確認ください。
+                                市や地区からの情報をご確認ください。
                             </p>
                         </div>
                     </div>

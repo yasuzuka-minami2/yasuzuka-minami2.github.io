@@ -68,14 +68,13 @@ export default function KairanbanPage() {
         </div>
 
         {/* Instructions */}
-        <Card className="p-6 mb-8 bg-accent/10 border-accent/30">
+        <Card className="p-6 mb-8 bg-primary/10 border-primary/30">
           <div className="flex items-start gap-4">
-            <FileText className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+            <FileText className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
             <div>
               <h2 className="text-lg font-bold text-foreground mb-2">回覧板の確認方法</h2>
               <p className="text-base text-foreground leading-relaxed">
-                各号をクリックすると、その回に配布されたすべてのPDF資料をご覧いただけます。 内容確認後、ページ上部の
-                <strong>「確認済みの連絡をする」ボタン</strong>よりご連絡をお願いします。
+                各号をクリックすると、その回に配布されたすべての資料をご覧いただけます。（※個人情報を含む資料は除きます）
               </p>
             </div>
           </div>
