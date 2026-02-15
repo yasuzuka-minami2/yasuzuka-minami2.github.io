@@ -6,6 +6,7 @@ import Image from "next/image"
 export default function HomePage() {
   // 更新履歴データ（新しいものが上）
   const updateHistory = [
+    { date: "2026年2月15日", text: "回覧板第四号を公開しました" },
     { date: "2026年2月14日", text: "デジタル回覧板を公開しました" },
   ]
 

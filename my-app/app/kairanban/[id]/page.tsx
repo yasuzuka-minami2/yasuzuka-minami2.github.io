@@ -5,7 +5,7 @@ import { ArrowLeft, Download, ExternalLink, FileText, Lock, Eye } from "lucide-r
 import { kairanbanData } from "@/lib/kairanban-data"
 
 export function generateStaticParams() {
-  return [{ id: '1' }, { id: '2' }, { id: '3' }]
+  return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }]
 }
 
 export default async function KairanbanDetailPage({ params }: { params: Promise<{ id: string }> }) {

@@ -4,171 +4,150 @@ description: 回覧板の新しい号を追加・更新する際の手順
 
 # 回覧板（kairanban）更新ワークフロー
 
-ユーザーが `public/kairanban/{号数}/` フォルダにPDFをアップロードした後の処理手順。
+毎月2回程度発行される回覧板をデジタル化し、Webサイトに掲載する手順です。
 
 ## 前提条件
-- PDFファイルはファイル名の先頭に番号を付ける（例: `1.○○.pdf`, `2.○○.pdf`）
-- 非公開ファイルはファイル名末尾に `※非公開` を含む
-- 【配布】と書いてあるファイルは公開・非公開の場合がある（※非公開の有無で判断）
+- リポジトリのルート: `yasuzuka-minami2.github.io`
+- 作業ディレクトリ: `my-app` (`cd my-app`)
+- PDFファイルは番号付きで整理されていること（例: `1.お知らせ.pdf`, `2.行事予定.pdf`）
 
 ---
 
 ## 手順
 
-### 1. フォルダのPDF一覧を確認
-```powershell
-Get-ChildItem "d:\Github\yasuzuka-minami2\yasuzuka-minami2.github.io\my-app\public\kairanban\{号数}"
-```
+### 1. PDFファイルの配置
+1. `public/kairanban/{号数}` フォルダを作成する（例: `public/kairanban/4`）。
+2. そのフォルダに回覧板のPDFファイルをすべて格納する。
+3. ファイル名のルール:
+   - 先頭に番号をつける（`1.`, `2.`...）
+   - 非公開ファイルは名前に「非公開」または「private」を含める（例: `2.名簿(非公開).pdf`）。
 
-### 2. PDFの中身を読み取り（pdfplumber使用）
-```python
-import pdfplumber
-import os
-
-base_dir = r"d:\Github\yasuzuka-minami2\yasuzuka-minami2.github.io\my-app\public\kairanban\{号数}"
-output_file = r"d:\Github\yasuzuka-minami2\pdf_output.txt"
-
-with open(output_file, "w", encoding="utf-8") as out:
-    for filename in sorted(os.listdir(base_dir)):
-        if not filename.endswith(".pdf"):
-            continue
-        filepath = os.path.join(base_dir, filename)
-        out.write(f"\n--- {filename} ---\n")
-        if "非公開" in filename:
-            out.write("[非公開ファイル - スキップ]\n")
-            continue
-        try:
-            with pdfplumber.open(filepath) as pdf:
-                text = ""
-                for page in pdf.pages[:2]:
-                    page_text = page.extract_text()
-                    if page_text:
-                        text += page_text + "\n"
-                if text.strip():
-                    out.write(text[:1000] + "\n")
-                else:
-                    out.write("[テキスト抽出不可 - スキャン画像PDF]\n")
-        except Exception as e:
-            out.write(f"[エラー: {e}]\n")
-print("完了")
-```
-
-- 抽出したテキストを元に、各PDFの紹介文（description）を作成する
-- スキャン画像PDFでテキスト抽出不可の場合は、ファイル名から推測して紹介文を書く
+### 2. コンテンツの把握
+PDFの並び順と内容を確認し、以下の情報をメモしておく（データ入力に使用）。
+- 発行日
+- 各ファイルの内容（タイトル、簡単な要約）
+- 非公開ファイルの有無
 
 ### 3. コードの更新
 
 #### 3-1. データファイルの更新
-ファイル: `lib/kairanban-data.ts`
+**ファイル**: `lib/kairanban-data.ts`
 
-新しい号のデータを追加する。以下の形式に従う:
+`kairanbanData` オブジェクトに新しい号のキーを追加し、データを入力する。
 
 ```typescript
-"{号数}": {
-  issueNumber: "第○号",
-  date: "2026年○月○日",
-  items: [
-    {
-      title: "1. ○○○",
-      pdfUrl: "/kairanban/{号数}/1.○○○.pdf",
-      description: "PDFの内容から作成した紹介文",
-      isPrivate: false,
-    },
-    // ※非公開ファイルの場合:
-    {
-      title: "○.【配布】○○○",
-      pdfUrl: "",  // 空文字にする
-      description: "個人情報が含まれるため非公開となります。組長へお問い合わせください。",
-      isPrivate: true,  // trueにする
-    },
-  ],
-  formUrl: "https://docs.google.com/forms/d/e/...",
+// 例: 第4号の場合
+"4": {
+    issueNumber: "第四号",
+    date: "2026年2月15日",
+    items: [
+        {
+            title: "1. ○○○",
+            pdfUrl: "/kairanban/4/1.○○○.pdf",
+            description: "○○に関するお知らせ。",
+            isPrivate: false,
+        },
+        // 非公開ファイルの場合
+        {
+            title: "2.【非公開】名簿",
+            pdfUrl: "", // 空文字にする
+            description: "個人情報を含むため非公開。",
+            isPrivate: true, // trueに設定
+        },
+    ],
+    // 確認フォームURL（Google Form等）
+    formUrl: "https://forms.gle/...",
 },
 ```
 
-#### 3-2. 一覧ページの更新
-ファイル: `app/kairanban/page.tsx`
+#### 3-2. 回覧板一覧ページの更新
+**ファイル**: `app/kairanban/page.tsx`
 
-`kairanbanIssues` 配列の先頭に新しい号を追加:
+`kairanbanIssues` 配列の**先頭**に新しい号の概要を追加する。
+
+```typescript
+// 例
+{
+  id: 4,
+  issueNumber: "第四号",
+  date: "2026年2月15日",
+  itemCount: 7, // アイテム総数
+  summary: "主な内容の要約（組からのお知らせ、○○募集など）",
+},
+```
+
+#### 3-3. 静的ページ生成設定の更新
+**ファイル**: `app/kairanban/[id]/page.tsx`
+
+`generateStaticParams` 関数に新しいIDを追加する。
+
+```typescript
+export function generateStaticParams() {
+  return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }] // '4'を追加
+}
+```
+
+### 4. ニュース・お知らせの更新
+
+#### 4-1. トップページのお知らせ
+**ファイル**: `app/page.tsx`
+
+`updateHistory` 配列の**先頭**に更新履歴を追加する。
+
+```typescript
+const updateHistory = [
+  { date: "2026年2月15日", text: "回覧板第四号を公開しました" }, // 追加
+  ...
+]
+```
+
+#### 4-2. お知らせページの更新
+**ファイル**: `app/news/page.tsx`
+
+`newsItems` 配列の**先頭**に新しい記事を追加する。個別ページへのリンクを含めること。
+**注意**: 本文とタイトルの重複を避けるため、本文にはリンクのみ記述する等の工夫をすること。
 
 ```typescript
 {
-  id: {号数},
-  issueNumber: "第○号",
-  date: "2026年○月○日",
-  itemCount: {件数},
-  summary: "各項目のタイトルをカンマ区切りで列挙",
+  id: {新しいID},
+  title: "回覧板第四号を公開しました",
+  date: "2026年2月15日",
+  content: (
+    <>
+      <Link href="/kairanban/4" className="text-primary hover:underline font-bold">
+        こちらからご覧いただけます（第四号へ移動）
+      </Link>
+    </>
+  ),
+  important: false,
 },
 ```
 
-#### 3-3. generateStaticParamsの更新
-ファイル: `app/kairanban/[id]/page.tsx`
-
-`generateStaticParams` に新しいIDを追加:
-```typescript
-return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '{新しい号数}' }]
-```
-
-### 4. ※非公開ファイルの処理
-
-> [!CAUTION]
-> 非公開ファイルは個人情報を含むため、**必ずサーバーから削除すること**。
-
-```powershell
-# -LiteralPathを使うこと（[id]フォルダのブラケット対策）
-Remove-Item -LiteralPath "d:\Github\yasuzuka-minami2\yasuzuka-minami2.github.io\my-app\public\kairanban\{号数}\{非公開ファイル名}" -Force
-```
-
-- コード上は項目を残す（`isPrivate: true`, `pdfUrl: ""`）
-- 🔒 Lockアイコンと注記が自動表示される
-
 ### 5. 結合PDF（all.pdf）の作成
+PDFファイルを結合して、全資料一括閲覧用の `all.pdf` を作成する。
+以下のスクリプトを実行する（`pdf-lib` が必要）。
 
-```python
-from pypdf import PdfWriter, PdfReader
-import os
-
-base_dir = r"d:\Github\yasuzuka-minami2\yasuzuka-minami2.github.io\my-app\public\kairanban"
-
-for issue_id in ["1", "2", "3"]:  # ← 新しい号数を追加
-    issue_dir = os.path.join(base_dir, issue_id)
-    output_path = os.path.join(issue_dir, "all.pdf")
-    
-    pdf_files = sorted([
-        f for f in os.listdir(issue_dir)
-        if f.endswith(".pdf") and "非公開" not in f and f != "all.pdf"
-    ])
-    
-    writer = PdfWriter()
-    for pdf_file in pdf_files:
-        reader = PdfReader(os.path.join(issue_dir, pdf_file))
-        for page in reader.pages:
-            writer.add_page(page)
-    
-    with open(output_path, "wb") as f:
-        writer.write(f)
-    print(f"第{issue_id}号: {len(pdf_files)}件 → all.pdf")
-```
-
-### 6. 一時ファイルの削除
-// turbo
 ```powershell
-Remove-Item d:\Github\yasuzuka-minami2\extract_pdf.py, d:\Github\yasuzuka-minami2\pdf_output.txt, d:\Github\yasuzuka-minami2\merge_pdfs.py -ErrorAction SilentlyContinue
+# 初回のみインストールが必要
+# npm install pdf-lib
+
+# スクリプト実行
+node scripts/create_kairanban_pdf.js {号数}
+# 例: node scripts/create_kairanban_pdf.js 4
 ```
+
+成功すると `public/kairanban/{号数}/all.pdf` が作成される。
+
+### 6. 検証
+1. 開発サーバーを起動: `npm run dev`
+2. ブラウザで `http://localhost:3000` を開く。
+3. 以下の点を確認:
+   - トップページのお知らせが更新されているか。
+   - 回覧板一覧に新しい号が表示されているか。
+   - 個別ページ（`/kairanban/{号数}`）が表示され、各PDFが開けるか。
+   - 「まとめて閲覧する」ボタンで `all.pdf` が開くか。
+   - アーカイブページ（`/kairanban/archive`）に新しい号が追加されているか。
+   - お知らせページ（`/news`）に記事が追加され、リンクが正しく機能するか。
 
 ### 7. デプロイ
-`/deploy` ワークフローを実行してGitHub Pagesにデプロイする。
-
----
-
-## チェックリスト
-
-- [ ] PDFフォルダの確認
-- [ ] PDFテキスト抽出 → 紹介文作成
-- [ ] `lib/kairanban-data.ts` にデータ追加
-- [ ] `app/kairanban/page.tsx` に一覧データ追加
-- [ ] `app/kairanban/[id]/page.tsx` の `generateStaticParams` 更新
-- [ ] ※非公開ファイルをサーバーから削除
-- [ ] 結合PDF（all.pdf）の作成
-- [ ] 一時ファイルの削除
-- [ ] デプロイ
+確認ができたら、`/deploy` ワークフローの手順に従ってGitHub Pagesへデプロイする。

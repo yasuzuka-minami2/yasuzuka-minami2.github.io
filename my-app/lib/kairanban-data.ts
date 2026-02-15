@@ -192,4 +192,53 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
         ],
         formUrl: "https://forms.gle/F6V9ZEudw1FT4kQLA",
     },
+    "4": {
+        issueNumber: "第四号",
+        date: "2026年2月15日",
+        items: [
+            {
+                title: "1. 組からのお知らせ_No.4",
+                pdfUrl: "/kairanban/4/1.組からのお知らせ_2026.2.15_No.4.pdf",
+                description: "組からのお知らせ：定例の連絡事項等について。",
+                isPrivate: false,
+            },
+            {
+                title: "2.【再掲】宮当番割当表",
+                pdfUrl: "", // 非公開
+                description: "宮当番割当表：個人情報を含むためWeb非公開（組長へお問い合わせください）。",
+                isPrivate: true,
+            },
+            {
+                title: "3. ホームページ開設のお知らせ",
+                pdfUrl: "/kairanban/4/3.新田南2組 ホームページ開設のお知らせ.pdf",
+                description: "ホームページ開設：安塚町新田南2組のデジタル回覧板（本サイト）開設のお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "4. 自治会からのお知らせ_No.3",
+                pdfUrl: "/kairanban/4/4.自治会からのお知らせ_2026.2.13_No.3.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡。",
+                isPrivate: false,
+            },
+            {
+                title: "5. 令和8年度安塚町 要望一覧表",
+                pdfUrl: "/kairanban/4/5.令和8年度安塚町 要望一覧表.pdf",
+                description: "要望一覧表：今年度の安塚町への要望事項まとめ。",
+                isPrivate: false,
+            },
+            {
+                title: "6. チラシ：英語遊び＆英語でヨガ",
+                pdfUrl: "/kairanban/4/6.チラシ：英語遊び＆英語でヨガ.pdf",
+                description: "英語教室チラシ：英語遊びと英語ヨガ教室のご案内。",
+                isPrivate: false,
+            },
+            {
+                title: "7. 鈴鹿市身体障がい者福祉事業 回覧板カタログ No.89",
+                pdfUrl: "/kairanban/4/7.鈴鹿市身体障がい者福祉事業_回覧板カタログ2026新春号_No.89.pdf",
+                description: "福祉事業カタログ：鈴鹿市身体障がい者福祉事業のカタログ新春号（※一部のみ公開）。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "", // 後ほど設定
+    },
 }
