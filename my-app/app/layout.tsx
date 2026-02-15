@@ -77,7 +77,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const gaId = "G-3VWPWX7FKK"
+  const gaId = process.env.NODE_ENV === "production" ? "G-3VWPWX7FKK" : ""
 
   return (
     <html lang="ja" suppressHydrationWarning className="scroll-smooth">
