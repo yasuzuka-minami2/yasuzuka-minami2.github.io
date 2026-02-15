@@ -117,16 +117,16 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
                 isPrivate: false,
             },
             {
-                title: "8.（配布）令和8年 安塚町 行事計画・町会計予算",
-                pdfUrl: "/kairanban/2/8.（配布）令和8年 安塚町 行事計画・町会計予算.pdf",
+                title: "8.【配布】令和8年 安塚町 行事計画・町会計予算",
+                pdfUrl: "/kairanban/2/8.【配布】令和8年 安塚町 行事計画・町会計予算.pdf",
                 description: "行事計画・予算：令和8年度の行事予定と会計予算の配布資料。",
                 isPrivate: false,
             },
             {
-                title: "9.（配布）新田南2組 宮当番割当表",
-                pdfUrl: "/kairanban/2/9.（配布）新田南2組 宮当番割当表.pdf",
-                description: "宮当番割当表：令和8年度の神社行事当番スケジュールの配布資料。",
-                isPrivate: false,
+                title: "9.【配布】新田南2組 宮当番割当表",
+                pdfUrl: "", // 非公開
+                description: "宮当番割当表：個人情報を含むためWeb非公開（組長へお問い合わせください）。",
+                isPrivate: true,
             },
         ],
         formUrl: "https://forms.gle/wr5K3m47Ccp2G2Y17",
@@ -209,7 +209,7 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
                 isPrivate: true,
             },
             {
-                title: "3. ホームページ開設のお知らせ",
+                title: "3. 新田南2組 ホームページ開設のお知らせ",
                 pdfUrl: "/kairanban/4/3.新田南2組 ホームページ開設のお知らせ.pdf",
                 description: "ホームページ開設：安塚町新田南2組のデジタル回覧板（本サイト）開設のお知らせ。",
                 isPrivate: false,
@@ -233,7 +233,7 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
                 isPrivate: false,
             },
             {
-                title: "7. 鈴鹿市身体障がい者福祉事業 回覧板カタログ No.89",
+                title: "7. 鈴鹿市身体障がい者福祉事業 回覧板カタログ2026年新春号",
                 pdfUrl: "/kairanban/4/7.鈴鹿市身体障がい者福祉事業_回覧板カタログ2026新春号_No.89.pdf",
                 description: "福祉事業カタログ：鈴鹿市身体障がい者福祉事業のカタログ新春号（※一部のみ公開）。",
                 isPrivate: false,
