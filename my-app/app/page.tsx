@@ -6,6 +6,15 @@ import Image from "next/image"
 export default function HomePage() {
   // 更新履歴データ（新しいものが上）
   const updateHistory = [
+    {
+      date: "2026年2月28日",
+      text: (
+        <span>
+          <Link href="/kairanban/5" className="text-primary hover:underline">回覧板第5号</Link>・
+          <Link href="/koho/5" className="text-primary hover:underline">広報第五回</Link>を更新。
+        </span>
+      ),
+    },
     { date: "2026年2月15日", text: "回覧板第四号を公開しました" },
     { date: "2026年2月14日", text: "デジタル回覧板を公開しました" },
   ]

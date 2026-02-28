@@ -82,7 +82,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning className="scroll-smooth">
       <head>
-        {gaId && (
+        {gaId ? (
           <>
             <Script strategy="beforeInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
             <Script id="google-analytics" strategy="beforeInteractive">
@@ -94,7 +94,7 @@ export default function RootLayout({
               `}
             </Script>
           </>
-        )}
+        ) : null}
       </head>
       <body
         className={`${notoSans.variable} ${notoSerif.variable} ${zenMaruGothic.variable} ${mPlusRounded.variable} ${zenKakuGothic.variable} ${kiwiMaru.variable} font-sans antialiased`}

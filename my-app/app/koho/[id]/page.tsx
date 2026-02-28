@@ -4,13 +4,49 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "5": {
+            issueNumber: "第五回",
+            date: "2026年2月28日",
+            items: [
+                {
+                    title: "1. 令和8年度ごみ収集カレンダー",
+                    pdfUrl: "/koho/5/1.令和8年度ごみ収集カレンダー.pdf",
+                    description: "令和8年度のごみ収集日程カレンダーです。",
+                },
+                {
+                    title: "2. 2026 F1日本グランプリレースに伴う交通規制",
+                    pdfUrl: "/koho/5/2.2026 F1日本グランプリレースに伴う交通規制.pdf",
+                    description: "F1日本グランプリ開催時の周辺交通規制についてのお知らせ。",
+                },
+                {
+                    title: "3. 広報すずか 2026.3.5 No.1695",
+                    pdfUrl: "/koho/5/3.広報すずか_2026.3.5_No.1695.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "4. 広報すずかかめやま地区広域連合 2026.3 No.75",
+                    pdfUrl: "/koho/5/4.広報すずかかめやま地区広域連合_2026.3_No.75.pdf",
+                    description: "すずかかめやま地区広域連合の広報紙。",
+                },
+                {
+                    title: "5. 自治会すずか 2026.3 No.16",
+                    pdfUrl: "/koho/5/5.自治会すずか_2026.3_No.16.pdf",
+                    description: "鈴鹿市自治会連合会からのお知らせ。",
+                },
+                {
+                    title: "6. チラシ：すずかアートスクール受講案内",
+                    pdfUrl: "/koho/5/6.チラシ：すずかアートスクール受講案内.pdf",
+                    description: "すずかアートスクールの講座受講案内チラシ。",
+                },
+            ],
+        },
         "4": {
             issueNumber: "第四回",
             date: "2026年2月20日",

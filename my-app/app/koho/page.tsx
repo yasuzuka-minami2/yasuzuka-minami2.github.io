@@ -6,6 +6,13 @@ import { ArrowLeft, Megaphone, ChevronRight } from "lucide-react"
 export default function KohoPage() {
     const kohoIssues = [
         {
+            id: 5,
+            issueNumber: "第五回",
+            date: "2026年2月28日",
+            itemCount: 6,
+            summary: "令和8年度ごみ収集カレンダー、2026 F1日本グランプリ交通規制、広報すずか No.1695、広報すずかかめやま No.75 など",
+        },
+        {
             id: 4,
             issueNumber: "第四回",
             date: "2026年2月20日",

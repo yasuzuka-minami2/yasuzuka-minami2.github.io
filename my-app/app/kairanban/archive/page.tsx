@@ -57,6 +57,15 @@ export default function KairanbanArchivePage() {
                     </div>
                 </header>
 
+                {/* PDFダウンロードリンク */}
+                <div className="mb-6 flex justify-end">
+                    <a href="/kairanban/archive/20260228令和8年度回覧板配布一覧.pdf" target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" className="flex items-center gap-2 border-primary/50 hover:bg-primary/5 text-primary">
+                            <span className="font-bold">令和8年度 配布一覧の原本(PDF)を見る</span>
+                        </Button>
+                    </a>
+                </div>
+
                 {/* メインテーブル */}
                 <div className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm overflow-x-auto">
                     <table className="w-full border-collapse text-left text-sm md:text-base min-w-[800px]">

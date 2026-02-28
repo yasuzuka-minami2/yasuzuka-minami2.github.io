@@ -241,4 +241,47 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
         ],
         formUrl: "", // 後ほど設定
     },
+    "5": {
+        issueNumber: "第五号",
+        date: "2026年2月28日",
+        items: [
+            {
+                title: "1. 組からのお知らせ_No.5",
+                pdfUrl: "/kairanban/5/1.組からのお知らせ_2026.2.28_No.5.pdf",
+                description: "組からのお知らせ：定例の連絡事項等について。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 自治会からのお知らせ_No.4",
+                pdfUrl: "/kairanban/5/2.自治会のお知らせ_2026.2.26_No.4.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡。",
+                isPrivate: false,
+            },
+            {
+                title: "3. 林野災害注意報・警報",
+                pdfUrl: "/kairanban/5/3.林野災害注意報・警報.pdf",
+                description: "林野災害に関する注意報・警報のお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "4. スポーツ推進すずか 2026.3 No.48",
+                pdfUrl: "/kairanban/5/4.スポーツ推進すずか_2026.3_No.48.pdf",
+                description: "スポーツ推進委員の活動報告やスポーツイベントの案内。",
+                isPrivate: false,
+            },
+            {
+                title: "5. 飯野公民館だより 2026.3.5 No.381",
+                pdfUrl: "/kairanban/5/5.飯野公民会だより_2026.3.5_No.381.pdf",
+                description: "飯野公民館だより：各種講座やイベント、公民館の活動報告など。",
+                isPrivate: false,
+            },
+            {
+                title: "6. チラシ：合同企業説明会inすずか",
+                pdfUrl: "/kairanban/5/6.チラシ：合同企業説明会inすずか.pdf",
+                description: "合同企業説明会inすずかの開催案内と参加企業についての情報。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
 }
