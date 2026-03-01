@@ -125,6 +125,7 @@ const updateHistory = [
 
 ### 5. 結合PDF（kairanban〇_all.pdf）の作成
 PDFファイルを結合して、全資料一括閲覧用の `kairanban〇_all.pdf` を作成する。
+結合の際、ファイルサイズはファイル内の最小ページに合わせて自動的に統一（リサイズ）されます。
 以下のスクリプトを実行する（`pdf-lib` が必要）。
 
 ```powershell
