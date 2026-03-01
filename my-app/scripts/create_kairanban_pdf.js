@@ -10,7 +10,7 @@ if (!issueNumber) {
 }
 
 const kairanbanDir = path.join(__dirname, '..', 'public', 'kairanban', issueNumber);
-const outputFile = path.join(kairanbanDir, 'all.pdf');
+const outputFile = path.join(kairanbanDir, `kairanban${issueNumber}_all.pdf`);
 
 if (!fs.existsSync(kairanbanDir)) {
     console.error(`Error: Directory not found: ${kairanbanDir}`);
@@ -21,7 +21,7 @@ async function mergePdfs() {
     try {
         // Get all PDF files in the directory
         const files = fs.readdirSync(kairanbanDir)
-            .filter(file => file.toLowerCase().endsWith('.pdf') && file !== 'all.pdf')
+            .filter(file => file.toLowerCase().endsWith('.pdf') && file !== `kairanban${issueNumber}_all.pdf` && file !== 'all.pdf')
             .sort((a, b) => {
                 // Natural sort (so 1.pdf comes before 10.pdf)
                 return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });

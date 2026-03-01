@@ -123,8 +123,8 @@ const updateHistory = [
 },
 ```
 
-### 5. 結合PDF（all.pdf）の作成
-PDFファイルを結合して、全資料一括閲覧用の `all.pdf` を作成する。
+### 5. 結合PDF（kairanban〇_all.pdf）の作成
+PDFファイルを結合して、全資料一括閲覧用の `kairanban〇_all.pdf` を作成する。
 以下のスクリプトを実行する（`pdf-lib` が必要）。
 
 ```powershell
@@ -136,7 +136,7 @@ node scripts/create_kairanban_pdf.js {号数}
 # 例: node scripts/create_kairanban_pdf.js 4
 ```
 
-成功すると `public/kairanban/{号数}/all.pdf` が作成される。
+成功すると `public/kairanban/{号数}/kairanban{号数}_all.pdf` が作成される。
 
 ### 6. 検証
 1. 開発サーバーを起動: `npm run dev`
@@ -145,7 +145,7 @@ node scripts/create_kairanban_pdf.js {号数}
    - トップページのお知らせが更新されているか。
    - 回覧板一覧に新しい号が表示されているか。
    - 個別ページ（`/kairanban/{号数}`）が表示され、各PDFが開けるか。
-   - 「まとめて閲覧する」ボタンで `all.pdf` が開くか。
+   - 「まとめて閲覧する」ボタンで `kairanban〇_all.pdf` が開くか。
    - アーカイブページ（`/kairanban/archive`）に新しい号が追加されているか。
    - お知らせページ（`/news`）に記事が追加され、リンクが正しく機能するか。
 

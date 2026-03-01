@@ -60,7 +60,7 @@ export default async function KairanbanDetailPage({ params }: { params: Promise<
           <p className="text-base text-muted-foreground text-center mb-6">
             公開している{publicItemCount}件の回覧資料を一度に見ることができます。
           </p>
-          <a href={`/kairanban/${id}/all.pdf`} target="_blank" rel="noopener noreferrer">
+          <a href={`/kairanban/${id}/kairanban${id}_all.pdf`} target="_blank" rel="noopener noreferrer">
             <Button variant="default" size="lg" className="w-full text-base py-6 shadow-lg bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-all hover:scale-[1.02]">
               <Eye className="h-5 w-5 mr-2" />
               まとめて閲覧する
