@@ -4,13 +4,49 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "6": {
+            issueNumber: "第六回",
+            date: "2026年3月20日",
+            items: [
+                {
+                    title: "1. 広報すずか 2026.3.20 No.1696",
+                    pdfUrl: "/koho/6/1.広報すずか_2026.3.20_No.1696.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "2. 民児協スズカ 2026.3.20 No.75",
+                    pdfUrl: "/koho/6/2.民児協スズカ_2026.3.20_No.75.pdf",
+                    description: "鈴鹿市民生委員・児童委員協議会からのお知らせ。",
+                },
+                {
+                    title: "3. 2026鈴鹿さくら祭り（4月4日・5日）",
+                    pdfUrl: "/koho/6/3.2026鈴鹿さくら祭り（4月4日・5日）.pdf",
+                    description: "2026年鈴鹿さくら祭りの開催案内（4月4日・5日）。",
+                },
+                {
+                    title: "4. 第50回鈴鹿市植木まつり（4月10日～13日）",
+                    pdfUrl: "/koho/6/4.第50回鈴鹿市植木まつり（4月10日～13日）.pdf",
+                    description: "第50回鈴鹿市植木まつりの開催案内（4月10日〜13日）。",
+                },
+                {
+                    title: "5. 社協すずか 2026.3.20 No.482",
+                    pdfUrl: "/koho/6/5.社協すずか_2026.3.20_No.482.pdf",
+                    description: "鈴鹿市社会福祉協議会からのお知らせ。",
+                },
+                {
+                    title: "6. 令和7年度赤い羽根共同募金運動ご協力ありがとうございました！",
+                    pdfUrl: "/koho/6/6.令和7年度赤い羽根共同募金運動ご協力ありがとうございました！.pdf",
+                    description: "令和7年度赤い羽根共同募金へのご協力へのお礼と報告。",
+                },
+            ],
+        },
         "5": {
             issueNumber: "第五回",
             date: "2026年2月28日",

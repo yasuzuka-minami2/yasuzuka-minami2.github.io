@@ -241,6 +241,61 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
         ],
         formUrl: "", // 後ほど設定
     },
+    "6": {
+        issueNumber: "第六号",
+        date: "2026年3月15日",
+        items: [
+            {
+                title: "1. 組からのお知らせ_No.6",
+                pdfUrl: "/kairanban/6/1.組からのお知らせ_2026.3.15_No.6.pdf",
+                description: "組からのお知らせ：第1回家庭排水溝清掃（4/5）・地蔵堂祭（3/24）・春の祭礼（4/12）について。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 自治会からのお知らせ_No.5",
+                pdfUrl: "/kairanban/6/2.自治会からのお知らせ_2026.3.14_No.5.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡。",
+                isPrivate: false,
+            },
+            {
+                title: "3. 通行止め区間のお知らせ（3月23日～3月30日）",
+                pdfUrl: "/kairanban/6/3.通行止め区間のお知らせ（3月23日～3月30日）.pdf",
+                description: "3月23日〜30日の通行止め区間についてのお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "4. 市民相談をご利用ください",
+                pdfUrl: "/kairanban/6/4.市民相談をご利用ください.pdf",
+                description: "鈴鹿市の市民相談窓口のご案内。",
+                isPrivate: false,
+            },
+            {
+                title: "5. 介護予防を目的にサロン活動に参加しよう！飯野つゆくさサロン",
+                pdfUrl: "/kairanban/6/5.介護予防を目的にサロン活動に参加しよう！飯野つゆくさサロン.pdf",
+                description: "飯野つゆくさサロンへの参加案内。介護予防を目的とした地域サロン活動のご紹介。",
+                isPrivate: false,
+            },
+            {
+                title: "6. 防犯みえ 2026春号 No.82",
+                pdfUrl: "/kairanban/6/6.防犯みえ_2026春号_No.82.pdf",
+                description: "三重県防犯協会からの防犯情報誌・春号。",
+                isPrivate: false,
+            },
+            {
+                title: "7. 鈴鹿市青少年育成市民会議だより 2026.3.20 No.88",
+                pdfUrl: "/kairanban/6/7.鈴鹿市青少年育成 市民会議だより_2026.3.20_No.88.pdf",
+                description: "鈴鹿市青少年育成市民会議からの活動報告・お知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "8. しょうぼう 中央消防署だより 2026.3.20",
+                pdfUrl: "/kairanban/6/8.しょうぼう 中央消防署だより_2026.3.20.pdf",
+                description: "中央消防署からの消防・防火に関するお知らせ。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "5": {
         issueNumber: "第五号",
         date: "2026年2月28日",

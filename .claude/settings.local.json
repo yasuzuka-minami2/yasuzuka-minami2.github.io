@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"D:/Github/yasuzuka-minami2/yasuzuka-minami2.github.io/my-app\" && node scripts/create_kairanban_pdf.js 6)",
+      "Bash(cd \"D:/Github/yasuzuka-minami2/yasuzuka-minami2.github.io/my-app\" && npm run dev)",
+      "Bash(cd \"D:/Github/yasuzuka-minami2/yasuzuka-minami2.github.io/my-app\" && npm run build 2>&1)",
+      "Bash(cd \"D:/Github/yasuzuka-minami2/yasuzuka-minami2.github.io\" && rm -rf _next out && cp -r my-app/out/. .)"
+    ]
+  }
+}
