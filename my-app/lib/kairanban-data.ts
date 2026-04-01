@@ -15,6 +15,37 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "7": {
+        issueNumber: "第七号",
+        date: "2026年4月1日",
+        items: [
+            {
+                title: "1. 自治会からのお知らせ_2026.3.27_No.6",
+                pdfUrl: "/kairanban/7/1.自治会からのお知らせ_2026.3.27_No.6.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 農業委員会だよりすずか_2026.4_No.50",
+                pdfUrl: "/kairanban/7/2.農業委員会だよりすずか_2026.4_No.50.pdf",
+                description: "農業委員会だよりすずか：鈴鹿市農業委員会からのお知らせや活動報告。",
+                isPrivate: false,
+            },
+            {
+                title: "3. 飯野公民館だより 2026.4.5 No.382",
+                pdfUrl: "/kairanban/7/3.飯野公民館だより_2026.4.5_No.382.pdf",
+                description: "飯野公民館だより：各種講座やイベント、公民館の活動報告など。",
+                isPrivate: false,
+            },
+            {
+                title: "4. チラシ 鈴鹿川日々の暮らし市（4月18日・19日）",
+                pdfUrl: "/kairanban/7/4.チラシ 鈴鹿川日々の暮らし市（4月18日・19日）.pdf",
+                description: "鈴鹿川日々の暮らし市：4月18日・19日に鈴鹿川で開催されるイベントのご案内。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "1": {
         issueNumber: "第一号",
         date: "2026年1月11日",

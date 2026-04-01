@@ -4,13 +4,44 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "7": {
+            issueNumber: "第七回",
+            date: "2026年4月1日",
+            items: [
+                {
+                    title: "1. 広報すずか 2026.4 No.1696",
+                    pdfUrl: "/koho/7/1.広報すずか_2026.4_No.1696.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "2. S+「エスプラス」 2026.4 No.8",
+                    pdfUrl: "/koho/7/2.S+「エスプラス」_2026.4_No.8.pdf",
+                    description: "S+「エスプラス」最新号。",
+                },
+                {
+                    title: "3. こどもの予防接種のお知らせ",
+                    pdfUrl: "/koho/7/3.こどもの予防接種のお知らせ（令和8年4月現在）.pdf",
+                    description: "令和8年4月現在のこどもの予防接種に関するスケジュールとお知らせ。",
+                },
+                {
+                    title: "4. 社協すずか 2026.4.5 No.483",
+                    pdfUrl: "/koho/7/4.社協すずか_2026.4.5_No.483.pdf",
+                    description: "鈴鹿市社会福祉協議会からのお知らせ。",
+                },
+                {
+                    title: "5. 鈴鹿市内公共交通時刻表 2026年度版",
+                    pdfUrl: "/koho/7/5.鈴鹿市内公共交通時刻表2026年度版.pdf",
+                    description: "2026年度版の鈴鹿市内公共交通機関ごとの時刻表と路線図です。",
+                },
+            ],
+        },
         "6": {
             issueNumber: "第六回",
             date: "2026年3月20日",
