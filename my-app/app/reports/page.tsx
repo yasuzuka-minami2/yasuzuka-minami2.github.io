@@ -7,6 +7,20 @@ import Image from "next/image"
 export default function ReportsPage() {
   const reports = [
     {
+      id: "20260405",
+      title: "春の家庭排水溝清掃",
+      date: "2026年4月5日（日）",
+      excerpt: "安塚町内にて春の家庭排水溝清掃を実施しました。",
+      imageUrl: "/reports/20260405/1.jpg",
+    },
+    {
+      id: "20260324",
+      title: "地蔵堂祭の開催",
+      date: "2026年3月24日（火）",
+      excerpt: "安塚町北組 欣念寺西地蔵堂にて、地蔵堂祭が開催されました。",
+      imageUrl: "/reports/20260324/1.jpg",
+    },
+    {
       id: "20260211",
       title: "御鍬祭の開催",
       date: "2026年2月11日（水・祝）",

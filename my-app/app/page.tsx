@@ -7,6 +7,15 @@ export default function HomePage() {
   // 更新履歴データ（新しいものが上）
   const updateHistory = [
     {
+      date: "2026年4月5日",
+      text: (
+        <span>
+          活動報告を更新 <Link href="/reports/20260324" className="text-primary hover:underline">地蔵堂祭</Link>・
+          <Link href="/reports/20260405" className="text-primary hover:underline">春の家庭排水溝清掃</Link>
+        </span>
+      ),
+    },
+    {
       date: "2026年4月1日",
       text: (
         <span>
