@@ -15,6 +15,19 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "8": {
+        issueNumber: "第八号",
+        date: "2026年4月15日",
+        items: [
+            {
+                title: "1. 組からのお知らせ_No.7",
+                pdfUrl: "/kairanban/8/1.組からのお知らせ_2024.4.15_No.7.pdf",
+                description: "組からのお知らせ：参集会館清掃のお知らせ等。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "7": {
         issueNumber: "第七号",
         date: "2026年4月1日",
