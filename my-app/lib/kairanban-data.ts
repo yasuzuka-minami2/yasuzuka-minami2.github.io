@@ -20,13 +20,13 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
         date: "2026年5月5日",
         items: [
             {
-                title: "1. 組からのお知らせ",
+                title: "1. 組からのお知らせ No.8",
                 pdfUrl: "/kairanban/9/1.組からのお知らせ_2026.5.5_No.8.pdf",
                 description: "組からのお知らせ等について。",
                 isPrivate: false,
             },
             {
-                title: "2. 自治会からのお知らせ",
+                title: "2. 自治会からのお知らせ No.7",
                 pdfUrl: "/kairanban/9/2.自治会からのお知らせ_2026.4.28_No.7.pdf",
                 description: "自治会からのお知らせ：安塚町自治会からの定例連絡。",
                 isPrivate: false,
@@ -68,13 +68,13 @@ export const kairanbanData: Record<string, KairanbanIssue> = {
                 isPrivate: false,
             },
             {
-                title: "9. 飯野公民館だより",
+                title: "9. 飯野公民館だより No.383",
                 pdfUrl: "/kairanban/9/9.飯野公民館だより_2026.5.5_No.383.pdf",
                 description: "飯野公民館からの最新のお知らせとイベント案内。",
                 isPrivate: false,
             },
             {
-                title: "10. SUZUCHU NOW",
+                title: "10. SUZUCHU NOW 2026春号",
                 pdfUrl: "/kairanban/9/10.SUZUCHU NOW_2026春号.pdf",
                 description: "鈴鹿中央総合病院の広報誌、春号。",
                 isPrivate: false,
