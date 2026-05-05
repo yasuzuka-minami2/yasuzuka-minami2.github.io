@@ -4,20 +4,46 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "8": {
+            issueNumber: "第八回",
+            date: "2026年5月5日",
+            items: [
+                {
+                    title: "1. 広報すずか 2026.5 No.1698",
+                    pdfUrl: "/koho/8/1.広報すずか_2026.5_No.1698.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "2. 社協すずか 2026.5.5 No.484",
+                    pdfUrl: "/koho/8/2.社協すずか_2026.5.5_No.484.pdf",
+                    description: "鈴鹿市社会福祉協議会からのお知らせ。",
+                },
+                {
+                    title: "3. 歯と口の健康習慣事業-お口の健康診断を行います-",
+                    pdfUrl: "/koho/8/3.歯と口の健康習慣事業-お口の健康診断を行います-.pdf",
+                    description: "歯と口の健康診断に関するお知らせ。",
+                },
+                {
+                    title: "4. 第48回 安塚町民運動会プログラム",
+                    pdfUrl: "/koho/8/4.第48回 安塚町民運動会プログラム.pdf",
+                    description: "第48回安塚町民運動会のプログラム。",
+                },
+            ],
+        },
         "7": {
             issueNumber: "第七回",
             date: "2026年4月1日",
             items: [
                 {
-                    title: "1. 広報すずか 2026.4 No.1696",
-                    pdfUrl: "/koho/7/1.広報すずか_2026.4_No.1696.pdf",
+                    title: "1. 広報すずか 2026.4 No.1697",
+                    pdfUrl: "/koho/7/1.広報すずか_2026.4_No.1697.pdf",
                     description: "広報すずか最新号：市政の各種情報やイベント案内等。",
                 },
                 {

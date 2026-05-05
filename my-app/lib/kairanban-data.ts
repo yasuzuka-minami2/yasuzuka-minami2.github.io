@@ -15,6 +15,73 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "9": {
+        issueNumber: "第九号",
+        date: "2026年5月5日",
+        items: [
+            {
+                title: "1. 組からのお知らせ",
+                pdfUrl: "/kairanban/9/1.組からのお知らせ_2026.5.5_No.8.pdf",
+                description: "組からのお知らせ等について。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 自治会からのお知らせ",
+                pdfUrl: "/kairanban/9/2.自治会からのお知らせ_2026.4.28_No.7.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡。",
+                isPrivate: false,
+            },
+            {
+                title: "3. 鈴鹿市中央消防署 住宅用火災警報器の設置状況調査について（依頼）",
+                pdfUrl: "/kairanban/9/3.鈴鹿市中央消防署 住宅用火災警報器の設置状況調査について（依頼）.pdf",
+                description: "鈴鹿市中央消防署からの住宅用火災警報器の設置状況調査のお願い。",
+                isPrivate: false,
+            },
+            {
+                title: "4. あなたの家の家具は倒れませんか？地震に備えて！",
+                pdfUrl: "/kairanban/9/4.あなたの家の家具は倒れませんか？地震に備えて！.pdf",
+                description: "地震に備えた家具の転倒防止対策についての案内。",
+                isPrivate: false,
+            },
+            {
+                title: "5. 国道23号鈴鹿四日市道路事業における自然環境調査のお知らせ",
+                pdfUrl: "/kairanban/9/5.国道23号鈴鹿四日市道路事業における自然環境調査のお知らせ.pdf",
+                description: "国道23号関連事業における自然環境調査の実施に関するお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "6. 「脳検査」受信希望者募集",
+                pdfUrl: "/kairanban/9/6.「脳検査」受信希望者募集.pdf",
+                description: "脳検査の受診希望者の募集案内。",
+                isPrivate: false,
+            },
+            {
+                title: "7. 第54回 飯野地区体育大会 開催要項",
+                pdfUrl: "/kairanban/9/7.第54回 飯野地区体育大会 開催要項.pdf",
+                description: "第54回飯野地区体育大会の開催要項・プログラム。",
+                isPrivate: false,
+            },
+            {
+                title: "8. 飯野地区地域づくり協議会 井戸端カフェ",
+                pdfUrl: "/kairanban/9/8.飯野地区地域づくり協議会 井戸端カフェ.pdf",
+                description: "飯野地区地域づくり協議会主催の井戸端カフェのご案内。",
+                isPrivate: false,
+            },
+            {
+                title: "9. 飯野公民館だより",
+                pdfUrl: "/kairanban/9/9.飯野公民館だより_2026.5.5_No.383.pdf",
+                description: "飯野公民館からの最新のお知らせとイベント案内。",
+                isPrivate: false,
+            },
+            {
+                title: "10. SUZUCHU NOW",
+                pdfUrl: "/kairanban/9/10.SUZUCHU NOW_2026春号.pdf",
+                description: "鈴鹿中央総合病院の広報誌、春号。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "8": {
         issueNumber: "第八号",
         date: "2026年4月15日",

@@ -7,6 +7,15 @@ export default function HomePage() {
   // 更新履歴データ（新しいものが上）
   const updateHistory = [
     {
+      date: "2026年5月5日",
+      text: (
+        <span>
+          <Link href="/kairanban/9" className="text-primary hover:underline">回覧板第9号</Link>・
+          <Link href="/koho/8" className="text-primary hover:underline">広報第八回</Link>を更新。
+        </span>
+      ),
+    },
+    {
       date: "2026年4月15日",
       text: (
         <span>
@@ -20,15 +29,6 @@ export default function HomePage() {
         <span>
           活動報告を更新 <Link href="/reports/20260324" className="text-primary hover:underline">地蔵堂祭</Link>・
           <Link href="/reports/20260405" className="text-primary hover:underline">春の家庭排水溝清掃</Link>
-        </span>
-      ),
-    },
-    {
-      date: "2026年4月1日",
-      text: (
-        <span>
-          <Link href="/kairanban/7" className="text-primary hover:underline">回覧板第7号</Link>・
-          <Link href="/koho/7" className="text-primary hover:underline">広報第七回</Link>を更新。
         </span>
       ),
     },

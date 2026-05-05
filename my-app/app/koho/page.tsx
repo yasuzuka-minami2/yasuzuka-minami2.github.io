@@ -6,11 +6,18 @@ import { ArrowLeft, Megaphone, ChevronRight } from "lucide-react"
 export default function KohoPage() {
     const kohoIssues = [
         {
+            id: 8,
+            issueNumber: "第八回",
+            date: "2026年5月5日",
+            itemCount: 4,
+            summary: "広報すずか No.1698、社協すずか No.484、歯と口の健康診断、安塚町民運動会プログラム など",
+        },
+        {
             id: 7,
             issueNumber: "第七回",
             date: "2026年4月1日",
             itemCount: 5,
-            summary: "広報すずか No.1696、S+「エスプラス」No.8、予防接種のお知らせ、社協すずか No.483、公共交通時刻表 など",
+            summary: "広報すずか No.1697、S+「エスプラス」No.8、予防接種のお知らせ、社協すずか No.483、公共交通時刻表 など",
         },
         {
             id: 6,
