@@ -15,6 +15,73 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "10": {
+        issueNumber: "第十号",
+        date: "2026年5月31日",
+        items: [
+            {
+                title: "1. 自治会からのお知らせ 2026.5.27 No.8",
+                pdfUrl: "/kairanban/10/1.自治会からのお知らせ_2026.5.27_No.8.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 65歳以上のみなさんへ 結核診断のお知らせ",
+                pdfUrl: "/kairanban/10/2.65歳以上のみなさんへ 結核診断のお知らせ.pdf",
+                description: "65歳以上のみなさんへの結核検診のお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "3. 鈴鹿四日市道路に関するお知らせ",
+                pdfUrl: "/kairanban/10/3.鈴鹿四日市道路に関するお知らせ.pdf",
+                description: "鈴鹿四日市道路の整備に関するお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "4. 第4回きらめきキッズひろば",
+                pdfUrl: "/kairanban/10/4.第4回きらめきキッズひろば.pdf",
+                description: "子ども向けイベント「第4回きらめきキッズひろば」のご案内。",
+                isPrivate: false,
+            },
+            {
+                title: "5. スポーツ推進すずか 2026.6 No.49 - 第5回すずかロゲイニング",
+                pdfUrl: "/kairanban/10/5.スポーツ推進すずか_2026.6_No.49 -第5回すずかロゲイニング.pdf",
+                description: "スポーツ推進すずか最新号。第5回すずかロゲイニングのご案内など。",
+                isPrivate: false,
+            },
+            {
+                title: "6. 第3回伊勢型紙デザインコンテスト",
+                pdfUrl: "/kairanban/10/6.第3回伊勢型紙デザインコンテスト.pdf",
+                description: "第3回伊勢型紙デザインコンテストの開催と作品募集のご案内。",
+                isPrivate: false,
+            },
+            {
+                title: "7. 飯野公民館だより 2026.6.5 No.384",
+                pdfUrl: "/kairanban/10/7.飯野公民館だより_2026.6.5_No.384.pdf",
+                description: "飯野公民館だより最新号：各種講座やイベント、公民館活動の案内。",
+                isPrivate: false,
+            },
+            {
+                title: "8. 住宅なんでも相談会",
+                pdfUrl: "/kairanban/10/8.住宅なんでも相談会.pdf",
+                description: "住まいに関する無料相談会「住宅なんでも相談会」のご案内。",
+                isPrivate: false,
+            },
+            {
+                title: "9. 第24回鈴鹿市脳卒中・循環器病市民講座",
+                pdfUrl: "/kairanban/10/9.第24回鈴鹿市脳卒中・循環器病市民講座.pdf",
+                description: "健康に関する市民講座「第24回鈴鹿市脳卒中・循環器病市民講座」のご案内。",
+                isPrivate: false,
+            },
+            {
+                title: "10. 鈴鹿市身体障がい者福祉事業 回覧板カタログ No.92",
+                pdfUrl: "/kairanban/10/10.鈴鹿市身体障がい者福祉事業_回覧板カタログ_No.92.pdf",
+                description: "鈴鹿市身体障がい者福祉事業の回覧板カタログ最新号。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "9": {
         issueNumber: "第九号",
         date: "2026年5月5日",

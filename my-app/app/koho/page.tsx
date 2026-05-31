@@ -6,6 +6,13 @@ import { ArrowLeft, Megaphone, ChevronRight } from "lucide-react"
 export default function KohoPage() {
     const kohoIssues = [
         {
+            id: 9,
+            issueNumber: "第九回",
+            date: "2026年5月31日",
+            itemCount: 7,
+            summary: "広報すずか No.1699、がん検診・健康診断のご案内、市議会だより No.243、社協すずか No.485、文化情報けやき など",
+        },
+        {
             id: 8,
             issueNumber: "第八回",
             date: "2026年5月5日",

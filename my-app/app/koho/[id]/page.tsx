@@ -4,13 +4,54 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "9": {
+            issueNumber: "第九回",
+            date: "2026年5月31日",
+            items: [
+                {
+                    title: "1. 広報すずか 2026.6 No.1699",
+                    pdfUrl: "/koho/9/1.広報すずか_2026.6_No.1699.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "2. 令和8年度版鈴鹿市がん検診・健康診断・保険事業のご案内",
+                    pdfUrl: "/koho/9/2.令和8年度版鈴鹿市がん検診・健康診断・保険事業のご案内.pdf",
+                    description: "令和8年度のがん検診・健康診断・保険事業に関するご案内。",
+                },
+                {
+                    title: "3. 鈴鹿市議会だより 2026.6 No.243",
+                    pdfUrl: "/koho/9/3.鈴鹿市議会だより_2026.6_No.243.pdf",
+                    description: "鈴鹿市議会だより最新号：議会活動の報告等。",
+                },
+                {
+                    title: "4. 社協すずか 2026.6.5 No.485",
+                    pdfUrl: "/koho/9/4.社協すずか_2026.6.5_No.485.pdf",
+                    description: "鈴鹿市社会福祉協議会からのお知らせ。",
+                },
+                {
+                    title: "5. 鈴鹿市文化情報けやき 2026.6.5",
+                    pdfUrl: "/koho/9/5.鈴鹿市文化情報けやき_2026.6.5.pdf",
+                    description: "鈴鹿市の最新文化・芸術・イベント情報誌「けやき」。",
+                },
+                {
+                    title: "6. 飯野地区地域づくり協議会だより 2026.6.5 No.17",
+                    pdfUrl: "/koho/9/6.飯野地区地域づくり協議会だより_2026.6.5_No.17.pdf",
+                    description: "飯野地区地域づくり協議会だより最新号。",
+                },
+                {
+                    title: "7. ボランティアチーム すずキャスメンバー大募集",
+                    pdfUrl: "/koho/9/7.ボランティアチーム すずキャスメンバー大募集.pdf",
+                    description: "ボランティアチーム「すずキャス」のメンバー募集チラシ。",
+                },
+            ],
+        },
         "8": {
             issueNumber: "第八回",
             date: "2026年5月5日",
