@@ -6,6 +6,19 @@ export default function NewsPage() {
   // 実際のお知らせ情報はここに追加してください
   const newsItems = [
     {
+      id: 9,
+      title: "回覧板第11号を更新。",
+      date: "2026年6月21日",
+      content: (
+        <>
+          <Link href="/kairanban/11" className="text-primary hover:underline font-bold block mb-2">
+            回覧板第11号はこちらからご覧いただけます
+          </Link>
+        </>
+      ),
+      important: false,
+    },
+    {
       id: 8,
       title: "回覧板第10号・広報第九回を更新。",
       date: "2026年5月31日",

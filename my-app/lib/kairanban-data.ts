@@ -15,6 +15,25 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "11": {
+        issueNumber: "第十一号",
+        date: "2026年6月21日",
+        items: [
+            {
+                title: "1. 自治会からのお知らせ 2026.6.17 No.9",
+                pdfUrl: "/kairanban/11/1.自治会からのお知らせ_2026.6.17_No.9.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡（No.9）。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 飯野公民館だより 2026.6.5 No.384(再回覧)",
+                pdfUrl: "/kairanban/11/2.飯野公民館だより_2026.6.5_No.384(再回覧).pdf",
+                description: "飯野公民館だより最新号：各種講座やイベント、公民館活動の案内（再回覧）。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "10": {
         issueNumber: "第十号",
         date: "2026年5月31日",
