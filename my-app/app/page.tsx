@@ -7,6 +7,14 @@ export default function HomePage() {
   // 更新履歴データ（新しいものが上）
   const updateHistory = [
     {
+      date: "2026年7月5日",
+      text: (
+        <span className="text-red-600 dark:text-red-400 font-bold text-base md:text-lg">
+          本日予定していた、祭礼用具虫干しは、天候不良のため7月19日に延期となります。
+        </span>
+      ),
+    },
+    {
       date: "2026年6月21日",
       text: (
         <span>

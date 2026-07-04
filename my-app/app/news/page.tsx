@@ -6,6 +6,17 @@ export default function NewsPage() {
   // 実際のお知らせ情報はここに追加してください
   const newsItems = [
     {
+      id: 10,
+      title: "【緊急】祭礼用具虫干し延期のお知らせ",
+      date: "2026年7月5日",
+      content: (
+        <span className="text-red-600 dark:text-red-400 font-bold">
+          7月5日の祭礼用具虫干しは7月19日に延期となります。ご面倒をおかけしますが、ご予定の程よろしくお願いいたします。
+        </span>
+      ),
+      important: true,
+    },
+    {
       id: 9,
       title: "回覧板第11号を更新。",
       date: "2026年6月21日",
