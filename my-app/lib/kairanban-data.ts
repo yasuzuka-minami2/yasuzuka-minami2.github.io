@@ -15,6 +15,67 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "12": {
+        issueNumber: "第十二号",
+        date: "2026年7月5日",
+        items: [
+            {
+                title: "1. 自治会からのお知らせ 2026.6.30 No.10",
+                pdfUrl: "/kairanban/12/1.自治会からのお知らせ_26.6.30_No.10.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡（No.10）。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 飯野地区体育委員会からの御礼",
+                pdfUrl: "/kairanban/12/2.飯野地区体育委員会からの御礼.pdf",
+                description: "飯野地区体育委員会からの御礼に関するお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "3. 第32回 親子ボウリング大会申込書",
+                pdfUrl: "/kairanban/12/3.第32回 親子ボウリング大会申込書.pdf",
+                description: "第32回親子ボウリング大会の参加申込書。",
+                isPrivate: false,
+            },
+            {
+                title: "4. 「飛び出し注意」の看板設置についてのお願い",
+                pdfUrl: "/kairanban/12/4.「飛び出し注意」の看板設置についてのお願い.pdf",
+                description: "飛び出し注意看板の設置に関するお願い。",
+                isPrivate: false,
+            },
+            {
+                title: "5. 玉垣幼・小あんしんみまもり隊へご協力のお願い",
+                pdfUrl: "/kairanban/12/5.玉垣幼・小あんしんみまもり隊へご協力のお願い.pdf",
+                description: "玉垣幼・小あんしんみまもり隊への協力依頼。",
+                isPrivate: false,
+            },
+            {
+                title: "6. 飯野公民館だより 2026.7.5 No.385",
+                pdfUrl: "/kairanban/12/6.飯野公民館だより_26.7.5_No.385.pdf",
+                description: "飯野公民館だより最新号：各種講座やイベント、公民館活動の案内。",
+                isPrivate: false,
+            },
+            {
+                title: "7. つゆくさだより",
+                pdfUrl: "/kairanban/12/7.つゆくさだより.pdf",
+                description: "つゆくさだよりの最新号。",
+                isPrivate: false,
+            },
+            {
+                title: "8. 鈴鹿67社 夏詣",
+                pdfUrl: "/kairanban/12/8.鈴鹿67社 夏詣.pdf",
+                description: "鈴鹿67社 夏詣に関するご案内。",
+                isPrivate: false,
+            },
+            {
+                title: "9. チラシ：ビアガーデン at デイサービスきらめき",
+                pdfUrl: "/kairanban/12/9.チラシ：ビアガーデン at デイサービスきらめき.pdf",
+                description: "デイサービスきらめきで開催されるビアガーデンのチラシ。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "11": {
         issueNumber: "第十一号",
         date: "2026年6月21日",

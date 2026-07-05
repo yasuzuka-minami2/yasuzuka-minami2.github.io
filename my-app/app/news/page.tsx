@@ -6,7 +6,7 @@ export default function NewsPage() {
   // 実際のお知らせ情報はここに追加してください
   const newsItems = [
     {
-      id: 10,
+      id: 11,
       title: "【緊急】祭礼用具虫干し延期のお知らせ",
       date: "2026年7月5日",
       content: (
@@ -15,6 +15,22 @@ export default function NewsPage() {
         </span>
       ),
       important: true,
+    },
+    {
+      id: 10,
+      title: "回覧板第12号・広報第十回を更新。",
+      date: "2026年7月5日",
+      content: (
+        <>
+          <Link href="/kairanban/12" className="text-primary hover:underline font-bold block mb-2">
+            回覧板第12号はこちらからご覧いただけます
+          </Link>
+          <Link href="/koho/10" className="text-primary hover:underline font-bold block">
+            広報第十回はこちらからご覧いただけます
+          </Link>
+        </>
+      ),
+      important: false,
     },
     {
       id: 9,

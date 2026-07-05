@@ -15,36 +15,19 @@ export default function HomePage() {
       ),
     },
     {
+      date: "2026年7月5日",
+      text: (
+        <span>
+          <Link href="/kairanban/12" className="text-primary hover:underline">回覧板第12号</Link>・
+          <Link href="/koho/10" className="text-primary hover:underline">広報第十回</Link>を更新。
+        </span>
+      ),
+    },
+    {
       date: "2026年6月21日",
       text: (
         <span>
           <Link href="/kairanban/11" className="text-primary hover:underline">回覧板第11号</Link>を更新。
-        </span>
-      ),
-    },
-    {
-      date: "2026年5月31日",
-      text: (
-        <span>
-          <Link href="/kairanban/10" className="text-primary hover:underline">回覧板第10号</Link>・
-          <Link href="/koho/9" className="text-primary hover:underline">広報第九回</Link>を更新。
-        </span>
-      ),
-    },
-    {
-      date: "2026年5月5日",
-      text: (
-        <span>
-          <Link href="/kairanban/9" className="text-primary hover:underline">回覧板第9号</Link>・
-          <Link href="/koho/8" className="text-primary hover:underline">広報第八回</Link>を更新。
-        </span>
-      ),
-    },
-    {
-      date: "2026年4月15日",
-      text: (
-        <span>
-          <Link href="/kairanban/8" className="text-primary hover:underline">回覧板第8号</Link>を公開しました。
         </span>
       ),
     },

@@ -4,13 +4,54 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }, { id: '10' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "10": {
+            issueNumber: "第十回",
+            date: "2026年7月5日",
+            items: [
+                {
+                    title: "1. 広報すずか 2026.7 No.1700",
+                    pdfUrl: "/koho/10/1.広報すずか_2026.7_No.1700.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "2. 社協すずか 2026.7.5 No.486",
+                    pdfUrl: "/koho/10/2.社協すずか_2026.7.5_No.486.pdf",
+                    description: "鈴鹿市社会福祉協議会からのお知らせ。",
+                },
+                {
+                    title: "3. エスプラス 2026.7 No.9",
+                    pdfUrl: "/koho/10/3.エスプラス_2026.7_No.9.pdf",
+                    description: "S+「エスプラス」最新号。",
+                },
+                {
+                    title: "4. 鈴鹿市議会だより 2026.7 No.244",
+                    pdfUrl: "/koho/10/4.鈴鹿市議会だより_2026.7_No.244.pdf",
+                    description: "鈴鹿市議会だより最新号：議会活動の報告等。",
+                },
+                {
+                    title: "5. 地域包括支援センターだより 2026 No.1",
+                    pdfUrl: "/koho/10/5.地域包括支援センターだより_2026_No.1.pdf",
+                    description: "地域包括支援センターからのお知らせ。",
+                },
+                {
+                    title: "6. 後期高齢者医療制度のお知らせ2026年度版",
+                    pdfUrl: "/koho/10/6.後期高齢者医療制度のお知らせ2026年度版.pdf",
+                    description: "2026年度版の後期高齢者医療制度に関するお知らせ。",
+                },
+                {
+                    title: "7. 太陽光パネル・蓄電池 エコライフ共同購入チラシ",
+                    pdfUrl: "/koho/10/7.太陽光パネル・蓄電池 エコライフ共同購入チラシ.pdf",
+                    description: "太陽光パネル・蓄電池の共同購入に関するチラシ。",
+                },
+            ],
+        },
         "9": {
             issueNumber: "第九回",
             date: "2026年5月31日",
