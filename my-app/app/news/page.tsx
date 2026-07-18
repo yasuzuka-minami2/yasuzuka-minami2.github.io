@@ -6,6 +6,17 @@ export default function NewsPage() {
   // 実際のお知らせ情報はここに追加してください
   const newsItems = [
     {
+      id: 12,
+      title: "【緊急】祭礼用具虫干し延期のお知らせ",
+      date: "2026年7月19日",
+      content: (
+        <span className="text-red-600 dark:text-red-400 font-bold">
+          本日予定していた、祭礼用具虫干しは、天候不良のため、明日7月20日８：３０からに延期となります。ご面倒をおかけしますが、ご予定の程よろしくお願いいたします。
+        </span>
+      ),
+      important: true,
+    },
+    {
       id: 11,
       title: "【緊急】祭礼用具虫干し延期のお知らせ",
       date: "2026年7月5日",
