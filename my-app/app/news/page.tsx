@@ -6,6 +6,19 @@ export default function NewsPage() {
   // 実際のお知らせ情報はここに追加してください
   const newsItems = [
     {
+      id: 13,
+      title: "回覧板第13号を更新。",
+      date: "2026年7月20日",
+      content: (
+        <>
+          <Link href="/kairanban/13" className="text-primary hover:underline font-bold block">
+            回覧板第13号はこちらからご覧いただけます
+          </Link>
+        </>
+      ),
+      important: false,
+    },
+    {
       id: 12,
       title: "【緊急】祭礼用具虫干し延期のお知らせ",
       date: "2026年7月19日",

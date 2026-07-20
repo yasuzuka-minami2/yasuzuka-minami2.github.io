@@ -15,6 +15,25 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "13": {
+        issueNumber: "第十三号",
+        date: "2026年7月20日",
+        items: [
+            {
+                title: "1. 自治会からのお知らせ 2026.7.14 No.11",
+                pdfUrl: "/kairanban/13/1.自治会からのお知らせ_2026.7.14_No.11.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡（No.11）。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 道路の測量・設計業務委託についてのお知らせ",
+                pdfUrl: "/kairanban/13/2.道路の測量・設計業務委託についてのお知らせ.pdf",
+                description: "道路の測量・設計業務委託に関するお知らせ。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "12": {
         issueNumber: "第十二号",
         date: "2026年7月5日",
