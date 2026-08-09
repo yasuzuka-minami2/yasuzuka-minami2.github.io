@@ -15,6 +15,67 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "14": {
+        issueNumber: "第十四号",
+        date: "2026年8月8日",
+        items: [
+            {
+                title: "1. 市立・私立幼稚園・認定こども園侵入園児募集のお知らせ",
+                pdfUrl: "/kairanban/14/1.市立・私立幼稚園・認定こども園侵入園児募集のお知らせ.pdf",
+                description: "市立・私立幼稚園および認定こども園の入園児童募集に関するお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 鈴鹿地域安全ニュース 特殊詐欺被害急増中",
+                pdfUrl: "/kairanban/14/2.鈴鹿地域安全ニュース 特殊詐欺被害急増中.pdf",
+                description: "鈴鹿地域安全ニュース：特殊詐欺被害の急増に対する注意喚起。",
+                isPrivate: false,
+            },
+            {
+                title: "3. 飯野公民館だより 2026.8.5 No.386",
+                pdfUrl: "/kairanban/14/3.飯野公民館だより_2026.8.5_No.386.pdf",
+                description: "飯野公民館だより最新号（No.386）：各種講座や案内。",
+                isPrivate: false,
+            },
+            {
+                title: "4. 認知症ともに暮らそう ともに考えよう",
+                pdfUrl: "/kairanban/14/4.認知症ともに暮らそう ともに考えよう.pdf",
+                description: "認知症とともに暮らす社会づくりに関する啓発資料。",
+                isPrivate: false,
+            },
+            {
+                title: "5. 鈴鹿市青少年育成市民会議だより 2026.8.5 No.89",
+                pdfUrl: "/kairanban/14/5.鈴鹿市青少年育成市民会議だより_2026.8.5_No.89.pdf",
+                description: "鈴鹿市青少年育成市民会議だより最新号（No.89）。",
+                isPrivate: false,
+            },
+            {
+                title: "6. すずか夏祭り 2026.8.15",
+                pdfUrl: "/kairanban/14/6.すずか夏祭り2026.8.15_ハナシユナイテッド文化ホール鈴鹿西条中央公園.pdf",
+                description: "すずか夏祭り（8月15日開催）のイベント案内。",
+                isPrivate: false,
+            },
+            {
+                title: "7. 鈴鹿夜な夜な是好日祭 2026.8.28-30",
+                pdfUrl: "/kairanban/14/7.鈴鹿夜な夜な是好日祭2026.8.28-30_鈴鹿フラワーパーク噴水広場.pdf",
+                description: "鈴鹿夜な夜な是好日祭（8月28日〜30日開催）のイベント案内。",
+                isPrivate: false,
+            },
+            {
+                title: "8. SUZUCHUNOW 2026.7.1 No.85",
+                pdfUrl: "/kairanban/14/8.SUZUCHUNOW_2026.7.1_No.85.pdf",
+                description: "SUZUCHUNOW最新号（No.85）。",
+                isPrivate: false,
+            },
+            {
+                title: "9. 鈴鹿市身体障がい者福祉事業 回覧板カタログ No.95",
+                pdfUrl: "/kairanban/14/9.鈴鹿市身体障がい者福祉事業_回覧板カタログ_No.95.pdf",
+                description: "鈴鹿市身体障がい者福祉事業の回覧板カタログ（No.95）。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "13": {
         issueNumber: "第十三号",
         date: "2026年7月20日",

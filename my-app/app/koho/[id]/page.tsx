@@ -4,13 +4,69 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }, { id: '10' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }, { id: '10' }, { id: '11' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "11": {
+            issueNumber: "第十一回",
+            date: "2026年8月8日",
+            items: [
+                {
+                    title: "1. 広報すずか 2026.8 No.1701",
+                    pdfUrl: "/koho/11/1.広報すずか_2026.8_No.1701.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "2. 広報すずかかめやま 2026.8 No.76",
+                    pdfUrl: "/koho/11/2.広報すずかかめやま_2026.8_No.76.pdf",
+                    description: "広報すずかかめやま最新号：広域行政などの情報案内。",
+                },
+                {
+                    title: "3. 社協すずか 2026.8.5 No.487",
+                    pdfUrl: "/koho/11/3.社協すずか_2026.8.5_No.487.pdf",
+                    description: "鈴鹿市社会福祉協議会からのお知らせ（No.487）。",
+                },
+                {
+                    title: "4. 鈴鹿市文化情報けやき 2026.8.5",
+                    pdfUrl: "/koho/11/4.鈴鹿市文化情報けやき_2026.8.5.pdf",
+                    description: "鈴鹿市の最新文化・芸術・イベント情報誌「けやき」。",
+                },
+                {
+                    title: "5. 鈴鹿市プレミアム付商品券",
+                    pdfUrl: "/koho/11/5.鈴鹿市プレミアム付商品券.pdf",
+                    description: "鈴鹿市プレミアム付商品券に関するお知らせ。",
+                },
+                {
+                    title: "6. 飯野地区地域づくり協議会だより 2026.8.5 No.18",
+                    pdfUrl: "/koho/11/6.飯野地区地域づくり協議会だより_2026.8.5_No.18.pdf",
+                    description: "飯野地区地域づくり協議会だより最新号（No.18）。",
+                },
+                {
+                    title: "7. 飯野民児協だより 2026.8.5 No.48",
+                    pdfUrl: "/koho/11/7.飯野民児協だより_2026.8.5_No.48.pdf",
+                    description: "飯野民児協だより最新号（No.48）。",
+                },
+                {
+                    title: "8. モータースポーツフェスタ 2026.9.19",
+                    pdfUrl: "/koho/11/8.モータースポーツフェスタ2026.9.19_イスのサンケイホール鈴鹿.pdf",
+                    description: "モータースポーツフェスタ（9月19日開催）のイベント案内。",
+                },
+                {
+                    title: "9. 鈴鹿げんき花火大会 2026.9.12",
+                    pdfUrl: "/koho/11/9.鈴鹿げんき花火大会_2026.9.12白子港緑地公園.pdf",
+                    description: "鈴鹿げんき花火大会（9月12日開催）の案内。",
+                },
+                {
+                    title: "10. 第29回鈴鹿シティマラソン 2026.12.13",
+                    pdfUrl: "/koho/11/10.第29回鈴鹿シティマラソン2026.12.13_鈴鹿サーキットレーシングコース.pdf",
+                    description: "第29回鈴鹿シティマラソン（12月13日開催）の募集案内。",
+                },
+            ],
+        },
         "10": {
             issueNumber: "第十回",
             date: "2026年7月5日",
