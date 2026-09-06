@@ -6,6 +6,13 @@ import { ArrowLeft, FileText, ChevronRight } from "lucide-react"
 export default function KairanbanPage() {
   const kairanbanIssues = [
     {
+      id: 15,
+      issueNumber: "第十五号",
+      date: "2026年9月6日",
+      itemCount: 10,
+      summary: "組・自治会からのお知らせ、グラウンドゴルフ大会申込、結核検診、ふれあいいきいきサロン募集、雨水幹線整備工事、スポーツ推進すずか、公民館だより、ふくふくまつり など",
+    },
+    {
       id: 14,
       issueNumber: "第十四号",
       date: "2026年8月8日",

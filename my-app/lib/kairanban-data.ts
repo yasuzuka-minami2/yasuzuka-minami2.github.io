@@ -15,6 +15,73 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "15": {
+        issueNumber: "第十五号",
+        date: "2026年9月6日",
+        items: [
+            {
+                title: "1. 組からのお知らせ 2026.9.6 No.9",
+                pdfUrl: "/kairanban/15/1.組からのお知らせ_2026.9.6_No.9.pdf",
+                description: "組からのお知らせ：安塚町南2組からの定例連絡（No.9）。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 自治会からのお知らせ 2026.8.27 No.13",
+                pdfUrl: "/kairanban/15/2.自治会からのお知らせ_2026.8.27_No.13.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡（No.13）。",
+                isPrivate: false,
+            },
+            {
+                title: "3. 第54回飯野地区グラウンドゴルフ大会参加申込み",
+                pdfUrl: "/kairanban/15/3.第54回飯野地区グラウンドゴルフ大会参加申込み.pdf",
+                description: "第54回飯野地区グラウンドゴルフ大会の参加申込みに関する案内。",
+                isPrivate: false,
+            },
+            {
+                title: "4. 65歳以上のみなさんへ結核検診のお知らせ",
+                pdfUrl: "/kairanban/15/4.65歳以上のみなさんへ結核検診のお知らせ.pdf",
+                description: "65歳以上の方を対象とした結核検診の実施案内。",
+                isPrivate: false,
+            },
+            {
+                title: "5. 第35回飯野地区ふれあいいきいきサロンの開催について（募集）",
+                pdfUrl: "/kairanban/15/5.第35回飯野地区ふれあいいきいきサロンの開催について（募集）.pdf",
+                description: "第35回飯野地区ふれあいいきいきサロンの開催と参加者募集のお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "6. 雨水幹線整備工事のお知らせ",
+                pdfUrl: "/kairanban/15/6.雨水幹線整備工事のお知らせ.pdf",
+                description: "雨水幹線整備工事の実施に伴うお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "7. スポーツ推進すずか 2026.9 No.50",
+                pdfUrl: "/kairanban/15/7.スポーツ推進すずか_2026.9_No.50.pdf",
+                description: "スポーツ推進すずか最新号（No.50）。",
+                isPrivate: false,
+            },
+            {
+                title: "8. 飯野公民館だより 2026.9.5 No.387",
+                pdfUrl: "/kairanban/15/8.飯野公民館だより_2026.9.5_No.387.pdf",
+                description: "飯野公民館だより最新号（No.387）：各種講座や案内。",
+                isPrivate: false,
+            },
+            {
+                title: "9. 第7回ふくふくまつり 2026.10.25",
+                pdfUrl: "/kairanban/15/9.第7回ふくふくまつり_2026.10.25.pdf",
+                description: "第7回ふくふくまつり（10月25日開催）のイベント案内。",
+                isPrivate: false,
+            },
+            {
+                title: "10. SUZUKA JOB FAIR in OSAKA 2026.10.17",
+                pdfUrl: "/kairanban/15/10.SUZUKA JOB FAIR in OSAKA_2026.10.17.pdf",
+                description: "SUZUKA JOB FAIR in OSAKA（10月17日開催）の案内。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "14": {
         issueNumber: "第十四号",
         date: "2026年8月8日",

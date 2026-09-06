@@ -7,6 +7,15 @@ export default function HomePage() {
   // 更新履歴データ（新しいものが上）
   const updateHistory = [
     {
+      date: "2026年9月6日",
+      text: (
+        <span>
+          <Link href="/kairanban/15" className="text-primary hover:underline">回覧板第15号</Link>・
+          <Link href="/koho/12" className="text-primary hover:underline">広報第十二回</Link>を更新。
+        </span>
+      ),
+    },
+    {
       date: "2026年8月8日",
       text: (
         <span>
@@ -20,14 +29,6 @@ export default function HomePage() {
       text: (
         <span>
           <Link href="/kairanban/13" className="text-primary hover:underline">回覧板第13号</Link>を更新。
-        </span>
-      ),
-    },
-    {
-      date: "2026年7月19日",
-      text: (
-        <span className="text-red-600 dark:text-red-400 font-bold text-base md:text-lg">
-          本日予定していた、祭礼用具虫干しは、天候不良のため、明日7月20日８：３０からに延期となります。
         </span>
       ),
     },

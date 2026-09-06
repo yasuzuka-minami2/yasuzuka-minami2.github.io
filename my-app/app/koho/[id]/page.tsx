@@ -4,13 +4,54 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }, { id: '10' }, { id: '11' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }, { id: '10' }, { id: '11' }, { id: '12' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "12": {
+            issueNumber: "第十二回",
+            date: "2026年9月6日",
+            items: [
+                {
+                    title: "1. 広報すずか 2026.9 No.1702",
+                    pdfUrl: "/koho/12/1.広報すずか_2026.9_No.1702.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "2. 鈴鹿市議会だより 2026.9 No.245",
+                    pdfUrl: "/koho/12/2.鈴鹿市議会だより_2026.9_No.245.pdf",
+                    description: "鈴鹿市議会だより最新号：議会活動の報告等。",
+                },
+                {
+                    title: "3. 社協すずか 2026.9.5 No.488",
+                    pdfUrl: "/koho/12/3.社協すずか_2026.9.5_No.488.pdf",
+                    description: "鈴鹿市社会福祉協議会からのお知らせ（No.488）。",
+                },
+                {
+                    title: "4. 鈴鹿亀山消費生活センターだより 2026.9 No.19",
+                    pdfUrl: "/koho/12/4.鈴鹿亀山消費生活センターだより_2026.9_No.19.pdf",
+                    description: "鈴鹿亀山消費生活センターだより最新号（No.19）：消費生活に関する情報等。",
+                },
+                {
+                    title: "5. 鈴鹿市文化情報けやき 2026.9.5",
+                    pdfUrl: "/koho/12/5.鈴鹿市文化情報けやき_2026.9.5.pdf",
+                    description: "鈴鹿市の最新文化・芸術・イベント情報誌「けやき」。",
+                },
+                {
+                    title: "6. スポーツフェスタ2026 2026.10.12",
+                    pdfUrl: "/koho/12/6.スポーツフェスタ2026_2026.10.12.pdf",
+                    description: "スポーツフェスタ2026（10月12日開催）のイベント案内。",
+                },
+                {
+                    title: "7. ふれあい広場鈴鹿 2026.10.3",
+                    pdfUrl: "/koho/12/7.ふれあい広場鈴鹿_2026.10.3.pdf",
+                    description: "ふれあい広場鈴鹿（10月3日開催）のイベント案内。",
+                },
+            ],
+        },
         "11": {
             issueNumber: "第十一回",
             date: "2026年8月8日",
