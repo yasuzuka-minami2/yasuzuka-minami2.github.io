@@ -4,13 +4,54 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Download, ExternalLink, Megaphone } from "lucide-react"
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }, { id: '10' }, { id: '11' }, { id: '12' }]
+    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }, { id: '5' }, { id: '6' }, { id: '7' }, { id: '8' }, { id: '9' }, { id: '10' }, { id: '11' }, { id: '12' }, { id: '13' }]
 }
 
 export default async function KohoDetailPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
 
     const kohoData: Record<string, any> = {
+        "13": {
+            issueNumber: "第十三回",
+            date: "2026年10月5日",
+            items: [
+                {
+                    title: "1. 広報すずか 2026.10 No.1703",
+                    pdfUrl: "/koho/13/1.広報すずか_2026.10_No.1703.pdf",
+                    description: "広報すずか最新号：市政の各種情報やイベント案内等。",
+                },
+                {
+                    title: "2. 社協すずか 2026.10.5 No.489",
+                    pdfUrl: "/koho/13/2.社協すずか_2026.10.5_No.489.pdf",
+                    description: "鈴鹿市社会福祉協議会からのお知らせ（No.489）。",
+                },
+                {
+                    title: "3. 民児協すずか 2026.10 No.76",
+                    pdfUrl: "/koho/13/3.民児協すずか_2026.10_No.76.pdf",
+                    description: "民児協すずか最新号（No.76）：民生委員・児童委員の活動紹介等。",
+                },
+                {
+                    title: "4. エスプラス 2026.10 No.10",
+                    pdfUrl: "/koho/13/4.エスプラス_2026.10_No.10.pdf",
+                    description: "S+「エスプラス」最新号（No.10）：鈴鹿市の各種情報。",
+                },
+                {
+                    title: "5. 第55回 三重県植木まつり",
+                    pdfUrl: "/koho/13/5.第55回 三重県植木まつり.pdf",
+                    description: "第55回 三重県植木まつりの開催案内。",
+                },
+                {
+                    title: "6. 笑顔で行こう！山田邦子と考える人生会議",
+                    pdfUrl: "/koho/13/6.笑顔で行こう！山田邦子と考える人生会議.pdf",
+                    description: "「笑顔で行こう！山田邦子と考える人生会議」講演会・イベント案内。",
+                },
+                {
+                    title: "7. 認知症かな？と思ったらお気軽にご相談ください",
+                    pdfUrl: "/koho/13/7.認知症かな？と思ったらお気軽にご相談ください.pdf",
+                    description: "認知症相談窓口のご案内と早期相談のおすすめ。",
+                },
+            ],
+        },
         "12": {
             issueNumber: "第十二回",
             date: "2026年9月6日",

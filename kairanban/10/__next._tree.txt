@@ -1,5 +1,5 @@
-:HL["/_next/static/chunks/418958ffde5cd307.css","style"]
-:HL["/_next/static/chunks/afe366c965b91ccf.css","style"]
+:HL["/_next/static/chunks/ada150737729c6fb.css","style"]
+:HL["/_next/static/chunks/ec1037022b25f5c0.css","style"]
 :HL["/_next/static/chunks/5e9beb5b15c24360.css","style"]
 :HL["/_next/static/chunks/05a07ef92938d0a0.css","style"]
 :HL["/_next/static/chunks/e49c36498ecb369c.css","style"]
@@ -261,7 +261,7 @@
 :HL["/_next/static/media/a9e877a6c90cd81a-s.p.11417dc2.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/ac30467988a472a7-s.p.6f5c42c9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/ad690682fe8bddd6-s.p.574c7b2f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/media/ad9c66e761fed85a-s.p.bd81a64b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/ad9c66e761fed85a-s.p.111d6998.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/adfc2f7e73c2456e-s.p.edd245b4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/aeb38d2c76cdb4e8-s.p.0652a2a6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/b05d9b30a58f058f-s.p.e1dd00a8.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -367,4 +367,4 @@
 :HL["/_next/static/media/fe29dc8fb74b9203-s.p.c05604c4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/ff2552049477c49c-s.p.c241edc5.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/ffb6d03f9c0a2d7d-s.p.56698822.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"buildId":"geB63oZs13ZrjgsajvFCP","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"kairanban","paramType":null,"paramKey":"kairanban","hasRuntimePrefetch":false,"slots":{"children":{"name":"id","paramType":"d","paramKey":"10","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"47Ccu6tgvQUzG-VYn1fWg","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"kairanban","paramType":null,"paramKey":"kairanban","hasRuntimePrefetch":false,"slots":{"children":{"name":"id","paramType":"d","paramKey":"10","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

@@ -15,6 +15,73 @@ export interface KairanbanIssue {
 }
 
 export const kairanbanData: Record<string, KairanbanIssue> = {
+    "16": {
+        issueNumber: "第十六号",
+        date: "2026年10月5日",
+        items: [
+            {
+                title: "1. 組からのお知らせ 2026.10.5 No.10",
+                pdfUrl: "/kairanban/16/1.組からのお知らせ_2026.10.5_No.10.pdf",
+                description: "組からのお知らせ：安塚町南2組からの定例連絡（No.10）。",
+                isPrivate: false,
+            },
+            {
+                title: "2. 自治会からのお知らせ 2026.9.29 No.14",
+                pdfUrl: "/kairanban/16/2.自治会からのお知らせ_2026.9.29_No.14.pdf",
+                description: "自治会からのお知らせ：安塚町自治会からの定例連絡（No.14）。",
+                isPrivate: false,
+            },
+            {
+                title: "3. ご案内 生け花・フラワーデザイン展",
+                pdfUrl: "/kairanban/16/3.ご案内 生け花・フラワーデザイン展.pdf",
+                description: "生け花・フラワーデザイン展の開催案内。",
+                isPrivate: false,
+            },
+            {
+                title: "4. 雨水排水路整備工事のお知らせ",
+                pdfUrl: "/kairanban/16/4.雨水排水路整備工事のお知らせ.pdf",
+                description: "雨水排水路整備工事の実施に伴うお知らせ。",
+                isPrivate: false,
+            },
+            {
+                title: "5. 鈴鹿地域安全ニュース 令和8年秋号",
+                pdfUrl: "/kairanban/16/5.鈴鹿地域安全ニュース 令和8年秋号.pdf",
+                description: "鈴鹿地域安全ニュース：秋の地域安全情報や啓発。",
+                isPrivate: false,
+            },
+            {
+                title: "6. 令和8年度 第2回 鈴鹿市ファミリー・サポート・センター提供会員養成講座",
+                pdfUrl: "/kairanban/16/6.令和8年度 第2回 鈴鹿市ファミリー・サポート・センター提供会員養成講座.pdf",
+                description: "令和8年度 第2回 鈴鹿市ファミリー・サポート・センター提供会員養成講座の受講案内。",
+                isPrivate: false,
+            },
+            {
+                title: "7. 飯野公民館だより 2026.10.5 No.388",
+                pdfUrl: "/kairanban/16/7.飯野公民館だより_2026.10.5_No.388.pdf",
+                description: "飯野公民館だより最新号（No.388）：各種講座や案内。",
+                isPrivate: false,
+            },
+            {
+                title: "8. 赤い羽根共同募金",
+                pdfUrl: "/kairanban/16/8.赤い羽根共同募金.pdf",
+                description: "赤い羽根共同募金に関するご案内とご協力のお願い。",
+                isPrivate: false,
+            },
+            {
+                title: "9. 2026西条deガッツリ祭",
+                pdfUrl: "/kairanban/16/9.2026西条deガッツリ祭.pdf",
+                description: "2026西条deガッツリ祭のイベント開催案内。",
+                isPrivate: false,
+            },
+            {
+                title: "10. 鈴鹿スポーツフェスタ2026",
+                pdfUrl: "/kairanban/16/10.鈴鹿スポーツフェスタ2026.pdf",
+                description: "鈴鹿スポーツフェスタ2026のイベント案内。",
+                isPrivate: false,
+            },
+        ],
+        formUrl: "",
+    },
     "15": {
         issueNumber: "第十五号",
         date: "2026年9月6日",

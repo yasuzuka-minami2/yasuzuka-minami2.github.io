@@ -13,7 +13,7 @@ export default function KairanbanArchivePage() {
 
     // 丸数字の変換関数
     const getCircleNumber = (num: number) => {
-        const map = ["①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩", "⑪", "⑫", "⑬", "⑭", "⑮"]
+        const map = ["①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩", "⑪", "⑫", "⑬", "⑭", "⑮", "⑯", "⑰", "⑱", "⑲", "⑳"]
         return map[num - 1] || num.toString()
     }
 
@@ -59,7 +59,7 @@ export default function KairanbanArchivePage() {
 
                 {/* PDFダウンロードリンク */}
                 <div className="mb-6 flex justify-end">
-                    <a href="/kairanban/archive/20260906令和8年度回覧板配布一覧.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="/kairanban/archive/20261005令和8年度回覧板配布一覧.pdf" target="_blank" rel="noopener noreferrer">
                         <Button variant="outline" className="flex items-center gap-2 border-primary/50 hover:bg-primary/5 text-primary">
                             <span className="font-bold">令和8年度 配布一覧の原本(PDF)を見る</span>
                         </Button>
